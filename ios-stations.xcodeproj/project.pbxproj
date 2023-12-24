@@ -22,6 +22,7 @@
 		BE7131462688C07700E3EAB8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7131452688C07600E3EAB8 /* WebKit.framework */; };
 		BE713148268B3CF000E3EAB8 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE713147268B3CF000E3EAB8 /* UIColor+Theme.swift */; };
 		BE71314A268B4CA400E3EAB8 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE713149268B4CA400E3EAB8 /* BookCell.swift */; };
+		C0A5B01D2B3846DC00A81C46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0A5B01F2B3846DC00A81C46 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		BE7131452688C07600E3EAB8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		BE713147268B3CF000E3EAB8 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		BE713149268B4CA400E3EAB8 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		C0A5B01E2B3846DC00A81C46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		BE24513F266FBEE00038AD81 /* ios-stations */ = {
 			isa = PBXGroup;
 			children = (
+				C0A5B01F2B3846DC00A81C46 /* InfoPlist.strings */,
 				617F70BD29C2BD4B00B7AFFE /* testResources */,
 				BE245140266FBEE00038AD81 /* AppDelegate.swift */,
 				BE7131362685ED0F00E3EAB8 /* Book.swift */,
@@ -267,6 +270,7 @@
 				BE24514D266FBEE10038AD81 /* LaunchScreen.storyboard in Resources */,
 				BE24514A266FBEE10038AD81 /* Assets.xcassets in Resources */,
 				BE245148266FBEE00038AD81 /* Main.storyboard in Resources */,
+				C0A5B01D2B3846DC00A81C46 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +360,14 @@
 				BE665EDF26817723006F4F2C /* Base */,
 			);
 			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		C0A5B01F2B3846DC00A81C46 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A5B01E2B3846DC00A81C46 /* ja */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
