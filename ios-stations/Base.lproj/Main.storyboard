@@ -31,7 +31,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Click">
                                             <attributes>
-                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <font key="NSFont" size="18" name="Arial-BoldMT"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
