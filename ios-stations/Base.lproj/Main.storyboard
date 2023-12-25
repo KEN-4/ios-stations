@@ -18,24 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSl-O1-tAm">
-                                <rect key="frame" x="20" y="426" width="374" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50q-Z1-B8j">
+                                <rect key="frame" x="107" y="426" width="200" height="44"/>
                                 <color key="backgroundColor" name="Main"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Qfr-m8-QdH"/>
+                                    <constraint firstAttribute="height" constant="44" id="AZS-Vn-epY"/>
+                                    <constraint firstAttribute="width" constant="200" id="i7N-T4-oRc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Click">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="Arial-BoldMT"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lSl-O1-tAm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8u4-Nw-TU2"/>
-                            <constraint firstItem="lSl-O1-tAm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Dhw-94-rOZ"/>
-                            <constraint firstItem="lSl-O1-tAm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GRr-SV-bLU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lSl-O1-tAm" secondAttribute="trailing" constant="20" id="ajD-A8-cFk"/>
+                            <constraint firstItem="50q-Z1-B8j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Huw-0z-pGc"/>
+                            <constraint firstItem="50q-Z1-B8j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bzH-kW-tqR"/>
                         </constraints>
                     </view>
                 </viewController>
