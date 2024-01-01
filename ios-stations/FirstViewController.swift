@@ -4,16 +4,31 @@
 //
 
 import UIKit
-
+        
 class FirstViewController: UIViewController {
 
     var books: [Book]?
+    
+    // ボタンのUIと紐付け
+    @IBOutlet weak var tapButton: UIButton!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // self.view.backgroundColor = UIColor.Theme.main
     }
-
+    // ボタンを押した時の処理
+    
+    @IBAction func tappedButton(_ sender: UIButton) {
+        let secondViewController = SecondViewController(url: "")
+        secondViewController.modalPresentationStyle = .fullScreen
+        self.present(secondViewController, animated: true, completion: nil)
+    }
+    //    @IBAction func tappedButton(_ sender: UIButton) {
+//        tapButton.backgroundColor = UIColor.random
+//    }
+    
 }
 
 extension FirstViewController: UITableViewDataSource {

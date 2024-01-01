@@ -31,14 +31,17 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Click">
                                             <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <font key="NSFont" size="18" name="Arial-BoldMT"/>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="18" name="HelveticaNeue-Light"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fuc-aQ-POL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -48,6 +51,9 @@
                             <constraint firstItem="50q-Z1-B8j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bzH-kW-tqR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tapButton" destination="50q-Z1-B8j" id="cOY-EV-Ecn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
