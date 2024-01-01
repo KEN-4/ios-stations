@@ -40,7 +40,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fuc-aQ-POL"/>
+                                    <action selector="presentSecondViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BRL-ed-cz4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,7 +52,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tapButton" destination="50q-Z1-B8j" id="cOY-EV-Ecn"/>
+                        <outlet property="presentSecondViewController" destination="50q-Z1-B8j" id="O8e-5a-jcN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

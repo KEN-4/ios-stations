@@ -10,7 +10,7 @@ class FirstViewController: UIViewController {
     var books: [Book]?
     
     // ボタンのUIと紐付け
-    @IBOutlet weak var tapButton: UIButton!
+    @IBOutlet weak var presentSecondViewController: UIButton!
     
     override func viewDidLoad() {
         
@@ -19,12 +19,12 @@ class FirstViewController: UIViewController {
         // self.view.backgroundColor = UIColor.Theme.main
     }
     // ボタンを押した時の処理
-    
-    @IBAction func tappedButton(_ sender: UIButton) {
+    @IBAction func presentSecondViewController(_ sender: UIButton) {
         let secondViewController = SecondViewController(url: "")
         secondViewController.modalPresentationStyle = .fullScreen
         self.present(secondViewController, animated: true, completion: nil)
     }
+    
     //    @IBAction func tappedButton(_ sender: UIButton) {
 //        tapButton.backgroundColor = UIColor.random
 //    }
