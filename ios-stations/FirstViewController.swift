@@ -20,7 +20,7 @@ class FirstViewController: UIViewController {
     }
     // ボタンを押した時の処理
     @IBAction func presentSecondViewController(_ sender: UIButton) {
-        let secondViewController = SecondViewController(url: "")
+        let secondViewController = SecondViewController(url: "https://techbowl.co.jp/")
         secondViewController.modalPresentationStyle = .fullScreen
         self.present(secondViewController, animated: true, completion: nil)
     }
