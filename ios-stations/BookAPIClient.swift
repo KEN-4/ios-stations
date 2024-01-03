@@ -5,6 +5,7 @@
 import Alamofire
 import Foundation
 
+
 protocol BookAPIClientProtocol {
     func fetchBooks(offset: Int, completion: @escaping ([Book]?) -> Void)
 }
