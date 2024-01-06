@@ -14,7 +14,9 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(BookCell.self, forCellReuseIdentifier: "reuseCell")
         fetchBooks()
+        
     }
     
     private func fetchBooks() {
@@ -28,15 +30,18 @@ class FirstViewController: UIViewController {
 }
 
 extension FirstViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath) as! BookCell
-        let book = books?[indexPath.row]
-        // セルの設定
-        return cell
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return books?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath) as? BookCell,
+        let book = books?[indexPath.row] else {
+            return UITableViewCell()
+        }
+        // セルの設定
+        cell.configure(with: book)
+        return cell
     }
 }
 

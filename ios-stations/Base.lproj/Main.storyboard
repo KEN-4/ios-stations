@@ -25,7 +25,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseCell" id="kgv-Jx-EeT" customClass="BookCell" customModule="ios_stations" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kgv-Jx-EeT" id="GSq-y6-EQC" customClass="BookCell" customModule="ios_stations" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="reuseCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kgv-Jx-EeT" id="GSq-y6-EQC" customClass="BookCell" customModule="ios_stations" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -34,6 +34,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="5xg-uQ-X9M"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="F9V-He-kQm"/>
+                                                        <constraint firstAttribute="width" constant="90" id="Fgq-z0-yku"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="Oup-GO-WBf"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bas-Hq-2lK">
@@ -56,6 +58,10 @@
                                                 <constraint firstItem="93l-Rz-Sv8" firstAttribute="top" secondItem="GSq-y6-EQC" secondAttribute="top" constant="5" id="ryb-Vc-tjl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="Bas-Hq-2lK" id="w80-FO-nAo"/>
+                                            <outlet property="titleLabel" destination="TZD-fW-km8" id="0nA-7j-fjO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
