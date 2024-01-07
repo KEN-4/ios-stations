@@ -14,7 +14,6 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(BookCell.self, forCellReuseIdentifier: "reuseCell")
         fetchBooks()
         
     }
