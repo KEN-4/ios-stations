@@ -56,5 +56,3 @@ extension FirstViewController: UITableViewDelegate {
         navigationController?.pushViewController(secondVC, animated: true)
     }
 }
-
-
