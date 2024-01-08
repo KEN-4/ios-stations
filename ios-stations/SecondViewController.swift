@@ -9,7 +9,7 @@ import WebKit
 class SecondViewController: UIViewController {
 
     private var webView: WKWebView!
-    private var url: String!
+    var url: String!
     
     init(url: String) {
         self.url = url

@@ -46,6 +46,15 @@ extension FirstViewController: UITableViewDataSource {
 
 extension FirstViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 選択された書籍の取得
+        guard let book = books?[indexPath.row] else { return }
+        
+        guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { return }
+
+        secondVC.url = book.url
+
+        navigationController?.pushViewController(secondVC, animated: true)
     }
 }
+
 
