@@ -50,7 +50,7 @@ extension FirstViewController: UITableViewDelegate {
         guard let book = books?[indexPath.row] else { return }
         
         guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { return }
-
+        // URLをSecondViewControllerに渡す
         secondVC.url = book.url
 
         navigationController?.pushViewController(secondVC, animated: true)
