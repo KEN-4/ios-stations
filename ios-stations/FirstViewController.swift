@@ -4,9 +4,9 @@
 //
 
 import UIKit
-        
-class FirstViewController: UIViewController {
 
+class FirstViewController: UIViewController {
+    
     var books: [Book]?
     let apiClient: BookAPIClientProtocol = BookAPIClient()
     
@@ -26,16 +26,6 @@ class FirstViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSecondViewController" {
-            if let secondVC = segue.destination as? SecondViewController,
-               let indexPath = tableView.indexPathForSelectedRow,
-               let book = books?[indexPath.row] {
-                secondVC.url = book.url
-            }
-        }
-    }
-    
 }
 
 extension FirstViewController: UITableViewDataSource {
@@ -45,7 +35,7 @@ extension FirstViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath) as? BookCell,
-        let book = books?[indexPath.row] else {
+              let book = books?[indexPath.row] else {
             return UITableViewCell()
         }
         // セルの設定
@@ -56,7 +46,13 @@ extension FirstViewController: UITableViewDataSource {
 
 extension FirstViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Segueを実行
-        performSegue(withIdentifier: "showSecondViewController", sender: self)
+        // 選択された書籍の取得
+        guard let book = books?[indexPath.row] else { return }
+        
+        guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { return }
+        // URLをSecondViewControllerに渡す
+        secondVC.url = book.url
+        
+        navigationController?.pushViewController(secondVC, animated: true)
     }
 }
