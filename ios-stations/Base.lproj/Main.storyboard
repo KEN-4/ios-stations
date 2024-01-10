@@ -80,7 +80,7 @@
                     <navigationItem key="navigationItem" id="zqv-Xh-08l"/>
                     <connections>
                         <outlet property="tableView" destination="0fZ-Gu-KhZ" id="P3x-Xr-8Wr"/>
-                        <segue destination="7Gh-98-glo" kind="show" id="WYq-vh-SrF"/>
+                        <segue destination="MlH-4i-GFg" kind="show" identifier="SecondViewController" id="Dzx-x0-K9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,20 +88,20 @@
             <point key="canvasLocation" x="5799.1999999999998" y="56.221889055472268"/>
         </scene>
         <!--Second View Controller-->
-        <scene sceneID="vfG-Ds-aTV">
+        <scene sceneID="cKt-PF-Mxf">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="7Gh-98-glo" customClass="SecondViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rsk-eD-KFc">
+                <viewController id="MlH-4i-GFg" customClass="SecondViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ml-Nc-6ph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="a5C-V9-oPZ"/>
+                        <viewLayoutGuide key="safeArea" id="NpI-G8-UlD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="W6i-vu-JuP"/>
+                    <navigationItem key="navigationItem" id="VhT-ve-eVG"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Clq-9w-qj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ikU-Uk-ea2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6647" y="56"/>
+            <point key="canvasLocation" x="6551" y="56"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9pF-0a-kTi">

@@ -46,13 +46,16 @@ extension FirstViewController: UITableViewDataSource {
 
 extension FirstViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 選択された書籍の取得
-        guard let book = books?[indexPath.row] else { return }
-        
-        guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { return }
-        // URLをSecondViewControllerに渡す
-        secondVC.url = book.url
-        
-        navigationController?.pushViewController(secondVC, animated: true)
+        performSegue(withIdentifier: "SecondViewController", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SecondViewController" {
+            if let secondVC = segue.destination as? SecondViewController,
+               let indexPath = tableView.indexPathForSelectedRow,
+               let book = books?[indexPath.row] {
+                secondVC.url = book.url
+            }
+        }
     }
 }
