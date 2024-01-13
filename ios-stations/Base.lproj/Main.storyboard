@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x8T-fz-rWU">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,22 +15,21 @@
             <objects>
                 <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="BYZ-38-t0r" customClass="FirstViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0fZ-Gu-KhZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="574"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0fZ-Gu-KhZ">
+                                <rect key="frame" x="0.0" y="0.0" width="392" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseCell" id="nOK-tR-NdB" customClass="BookCell" customModule="ios_stations" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="130"/>
+                                        <rect key="frame" x="0.0" y="50" width="392" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nOK-tR-NdB" id="gfd-mn-RWW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="392" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Book" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-EP-cS5">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-EP-cS5">
                                                     <rect key="frame" x="20" y="20" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="05a-jN-la2"/>
@@ -37,13 +37,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ys-gw-Z8v">
-                                                    <rect key="frame" x="130" y="20" width="225" height="21"/>
+                                                    <rect key="frame" x="130" y="20" width="242" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw1-iX-Gee">
-                                                    <rect key="frame" x="130" y="51" width="225" height="21"/>
+                                                    <rect key="frame" x="130" y="51" width="242" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -73,26 +73,58 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UFa-M0-ohK"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdt-RP-Ovl">
+                                <rect key="frame" x="60" y="726" width="273" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="Main"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Click">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Arial-BoldMT"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchFetchBooksButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tsd-yt-Qf2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xdt-RP-Ovl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="H9e-eN-OW6"/>
+                            <constraint firstItem="0fZ-Gu-KhZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Spe-8d-Yc1"/>
+                            <constraint firstItem="0fZ-Gu-KhZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WMv-sy-bYn"/>
+                            <constraint firstItem="xdt-RP-Ovl" firstAttribute="top" secondItem="0fZ-Gu-KhZ" secondAttribute="bottom" constant="60" id="bap-jq-EvG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0fZ-Gu-KhZ" secondAttribute="trailing" constant="1" id="gNn-oh-yTy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xdt-RP-Ovl" secondAttribute="bottom" constant="60" id="m1F-96-kxe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xdt-RP-Ovl" secondAttribute="trailing" constant="60" id="mAy-bQ-RoP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zqv-Xh-08l"/>
                     <connections>
+                        <outlet property="fetchBooksButton" destination="xdt-RP-Ovl" id="Wyk-1p-O3l"/>
                         <outlet property="tableView" destination="0fZ-Gu-KhZ" id="P3x-Xr-8Wr"/>
                         <segue destination="MlH-4i-GFg" kind="show" identifier="SecondViewController" id="Dzx-x0-K9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5799.1999999999998" y="56.221889055472268"/>
+            <point key="canvasLocation" x="5797.7099236641216" y="55.633802816901408"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="cKt-PF-Mxf">
             <objects>
                 <viewController id="MlH-4i-GFg" customClass="SecondViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ml-Nc-6ph">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="NpI-G8-UlD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -109,7 +141,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x8T-fz-rWU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8dj-Cr-Z1Z">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -123,7 +155,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Book" width="384" height="384"/>
+        <image name="book" width="384" height="384"/>
+        <namedColor name="Main">
+            <color red="0.81599998474121094" green="0.33700001239776611" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
