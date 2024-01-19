@@ -22,6 +22,9 @@
 		BE7131462688C07700E3EAB8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7131452688C07600E3EAB8 /* WebKit.framework */; };
 		BE713148268B3CF000E3EAB8 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE713147268B3CF000E3EAB8 /* UIColor+Theme.swift */; };
 		BE71314A268B4CA400E3EAB8 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE713149268B4CA400E3EAB8 /* BookCell.swift */; };
+		C07F9F622B53C2FC00E068B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F612B53C2FC00E068B4 /* ViewController.swift */; };
+		C07F9F642B5551CB00E068B4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F632B5551CB00E068B4 /* SignupViewController.swift */; };
+		C07F9F682B5553A400E068B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F672B5553A400E068B4 /* LoginViewController.swift */; };
 		C0A5B01D2B3846DC00A81C46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0A5B01F2B3846DC00A81C46 /* InfoPlist.strings */; };
 		C0A5B0222B428C1B00A81C46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0A5B0212B428C1B00A81C46 /* Alamofire */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,9 @@
 		BE7131452688C07600E3EAB8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		BE713147268B3CF000E3EAB8 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		BE713149268B4CA400E3EAB8 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		C07F9F612B53C2FC00E068B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C07F9F632B5551CB00E068B4 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C07F9F672B5553A400E068B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0A5B01E2B3846DC00A81C46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +129,7 @@
 				617F70BD29C2BD4B00B7AFFE /* testResources */,
 				BE245140266FBEE00038AD81 /* AppDelegate.swift */,
 				BE7131362685ED0F00E3EAB8 /* Book.swift */,
+				C07F9F612B53C2FC00E068B4 /* ViewController.swift */,
 				BE245142266FBEE00038AD81 /* SceneDelegate.swift */,
 				BE245144266FBEE00038AD81 /* FirstViewController.swift */,
 				BE7131382685ED7600E3EAB8 /* BookAPIClient.swift */,
@@ -133,6 +140,8 @@
 				BE245149266FBEE10038AD81 /* Assets.xcassets */,
 				BE24514B266FBEE10038AD81 /* LaunchScreen.storyboard */,
 				BE665EE026817723006F4F2C /* Info.plist */,
+				C07F9F632B5551CB00E068B4 /* SignupViewController.swift */,
+				C07F9F672B5553A400E068B4 /* LoginViewController.swift */,
 			);
 			path = "ios-stations";
 			sourceTree = "<group>";
@@ -305,12 +314,15 @@
 			files = (
 				BE71314A268B4CA400E3EAB8 /* BookCell.swift in Sources */,
 				BE665EDE2678EA44006F4F2C /* SecondViewController.swift in Sources */,
+				C07F9F642B5551CB00E068B4 /* SignupViewController.swift in Sources */,
 				BE713148268B3CF000E3EAB8 /* UIColor+Theme.swift in Sources */,
+				C07F9F622B53C2FC00E068B4 /* ViewController.swift in Sources */,
 				BE245145266FBEE00038AD81 /* FirstViewController.swift in Sources */,
 				BE7131392685ED7600E3EAB8 /* BookAPIClient.swift in Sources */,
 				BE245141266FBEE00038AD81 /* AppDelegate.swift in Sources */,
 				BE7131372685ED0F00E3EAB8 /* Book.swift in Sources */,
 				BE245143266FBEE00038AD81 /* SceneDelegate.swift in Sources */,
+				C07F9F682B5553A400E068B4 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ protocol BookAPIClientProtocol {
 class BookAPIClient: BookAPIClientProtocol {
     func fetchBooks(offset: Int, completion: @escaping ([Book]?) -> Void) {
         let url = "https://railway.bookreview.techtrain.dev/public/books"
-        AF.request(url).response { response in
+        AF.request(url).response(completionHandler: { response in
             do {
                 // JSONからBookオブジェクトへのデコード
                 let books = try JSONDecoder().decode([Book].self, from: response.data!)
@@ -22,6 +22,6 @@ class BookAPIClient: BookAPIClientProtocol {
             } catch {
                 print("Error: \(error.localizedDescription)")
             }
-        }
+        })
     }
 }
