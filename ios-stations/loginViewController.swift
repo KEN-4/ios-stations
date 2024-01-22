@@ -8,13 +8,34 @@
 import UIKit
 import Alamofire
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var uiLabel: UILabel!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        updateLoginButtonState()
+    }
+    
+    //textFieldにテキストが入力されたり変更されたりするときに呼ばれるdelegate
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // ボタンの状態を更新
+        updateLoginButtonState()
+        return true
+    }
+    
+    func updateLoginButtonState() {
+        // 全てのTextFieldに入力があるか確認
+        // textがnillの場合,trueを返す→!で反転するからfalseを返す
+        let isEmailEntered = !(emailTextField.text?.isEmpty ?? true)
+        let isPasswordEntered = !(passwordTextField.text?.isEmpty ?? true)
+        // ボタンの有効/無効を切り替え
+        loginButton.isEnabled = isEmailEntered && isPasswordEntered
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {

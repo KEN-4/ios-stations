@@ -358,6 +358,7 @@
                     <navigationItem key="navigationItem" id="KRP-Dk-NwV"/>
                     <connections>
                         <outlet property="emailTextField" destination="jwN-2X-DqM" id="RJS-uD-RA7"/>
+                        <outlet property="loginButton" destination="6jQ-je-FKq" id="Smv-53-FIE"/>
                         <outlet property="passwordTextField" destination="GYy-aw-Jev" id="q9P-na-20z"/>
                         <outlet property="uiLabel" destination="OYf-NF-doE" id="AOD-XQ-WVZ"/>
                     </connections>

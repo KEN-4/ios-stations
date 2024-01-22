@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
@@ -18,8 +18,29 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        signUpButton.isEnabled = false
-//        emailTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        userNameTextField.delegate = self
+        updateSignUpButtonState()
+        //        signUpButton.isEnabled = false
+        //        emailTextField.delegate = self
+    }
+    
+    //textFieldにテキストが入力されたり変更されたりするときに呼ばれるdelegate
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // ボタンの状態を更新
+        updateSignUpButtonState()
+        return true
+    }
+    
+    func updateSignUpButtonState() {
+        // 全てのTextFieldに入力があるか確認
+        // textがnillの場合,trueを返す→!で反転するからfalseを返す
+        let isEmailEntered = !(emailTextField.text?.isEmpty ?? true)
+        let isPasswordEntered = !(passwordTextField.text?.isEmpty ?? true)
+        let isUserNameEntered = !(userNameTextField.text?.isEmpty ?? true)
+        // ボタンの有効/無効を切り替え
+        signUpButton.isEnabled = isEmailEntered && isPasswordEntered && isUserNameEntered
     }
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {
