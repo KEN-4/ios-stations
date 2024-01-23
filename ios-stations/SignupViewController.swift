@@ -95,7 +95,7 @@ extension String {
     }
     
     func isPassword() -> Bool {
-        let pattern = "^(?=.*?[^\\w])(?=.*?[\\d]$"
+        let pattern = "^.{8,}$"
         let matches = validate(str: self, pattern: pattern)
         return matches.count > 0
     }
