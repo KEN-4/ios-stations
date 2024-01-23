@@ -23,6 +23,7 @@
 		BE713148268B3CF000E3EAB8 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE713147268B3CF000E3EAB8 /* UIColor+Theme.swift */; };
 		BE71314A268B4CA400E3EAB8 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE713149268B4CA400E3EAB8 /* BookCell.swift */; };
 		C07AFC662B5F3FDB00C7567D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07AFC652B5F3FDB00C7567D /* Validation.swift */; };
+		C07AFC6A2B5F46F400C7567D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C07AFC692B5F46F400C7567D /* KeychainAccess */; };
 		C07F9F622B53C2FC00E068B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F612B53C2FC00E068B4 /* ViewController.swift */; };
 		C07F9F642B5551CB00E068B4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F632B5551CB00E068B4 /* SignupViewController.swift */; };
 		C07F9F682B5553A400E068B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F672B5553A400E068B4 /* LoginViewController.swift */; };
@@ -83,6 +84,7 @@
 			files = (
 				BE7131462688C07700E3EAB8 /* WebKit.framework in Frameworks */,
 				C0A5B0222B428C1B00A81C46 /* Alamofire in Frameworks */,
+				C07AFC6A2B5F46F400C7567D /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +195,7 @@
 			name = "ios-stations";
 			packageProductDependencies = (
 				C0A5B0212B428C1B00A81C46 /* Alamofire */,
+				C07AFC692B5F46F400C7567D /* KeychainAccess */,
 			);
 			productName = "ios-stations";
 			productReference = BE24513D266FBEE00038AD81 /* ios-stations.app */;
@@ -269,6 +272,7 @@
 			mainGroup = BE245134266FBEE00038AD81;
 			packageReferences = (
 				C0A5B0202B428C1B00A81C46 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C07AFC682B5F46F400C7567D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = BE24513E266FBEE00038AD81 /* Products */;
 			projectDirPath = "";
@@ -677,6 +681,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C07AFC682B5F46F400C7567D /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess/";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C0A5B0202B428C1B00A81C46 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -688,6 +700,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C07AFC692B5F46F400C7567D /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C07AFC682B5F46F400C7567D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		C0A5B0212B428C1B00A81C46 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C0A5B0202B428C1B00A81C46 /* XCRemoteSwiftPackageReference "Alamofire" */;
