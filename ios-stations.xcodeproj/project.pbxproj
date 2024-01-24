@@ -24,6 +24,7 @@
 		BE71314A268B4CA400E3EAB8 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE713149268B4CA400E3EAB8 /* BookCell.swift */; };
 		C07AFC662B5F3FDB00C7567D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07AFC652B5F3FDB00C7567D /* Validation.swift */; };
 		C07AFC6A2B5F46F400C7567D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C07AFC692B5F46F400C7567D /* KeychainAccess */; };
+		C07AFC6C2B5F488700C7567D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07AFC6B2B5F488700C7567D /* InitialViewController.swift */; };
 		C07F9F622B53C2FC00E068B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F612B53C2FC00E068B4 /* ViewController.swift */; };
 		C07F9F642B5551CB00E068B4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F632B5551CB00E068B4 /* SignupViewController.swift */; };
 		C07F9F682B5553A400E068B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F672B5553A400E068B4 /* LoginViewController.swift */; };
@@ -71,6 +72,7 @@
 		BE713147268B3CF000E3EAB8 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		BE713149268B4CA400E3EAB8 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		C07AFC652B5F3FDB00C7567D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		C07AFC6B2B5F488700C7567D /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		C07F9F612B53C2FC00E068B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C07F9F632B5551CB00E068B4 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		C07F9F672B5553A400E068B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				C07F9F632B5551CB00E068B4 /* SignupViewController.swift */,
 				C07F9F672B5553A400E068B4 /* LoginViewController.swift */,
 				C07AFC652B5F3FDB00C7567D /* Validation.swift */,
+				C07AFC6B2B5F488700C7567D /* InitialViewController.swift */,
 			);
 			path = "ios-stations";
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					BE24513C266FBEE00038AD81 = {
 						CreatedOnToolsVersion = 12.5;
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE71314A268B4CA400E3EAB8 /* BookCell.swift in Sources */,
+				C07AFC6C2B5F488700C7567D /* InitialViewController.swift in Sources */,
 				BE665EDE2678EA44006F4F2C /* SecondViewController.swift in Sources */,
 				C07F9F642B5551CB00E068B4 /* SignupViewController.swift in Sources */,
 				BE713148268B3CF000E3EAB8 /* UIColor+Theme.swift in Sources */,
@@ -405,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -469,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

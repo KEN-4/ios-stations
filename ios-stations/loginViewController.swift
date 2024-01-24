@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import KeychainAccess
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -39,6 +40,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        print("tapped")
         guard let email = emailTextField.text, !email.isEmpty, email.isEmail() else {
             self.uiLabel.text = "無効なメールアドレス形式です"
             return
@@ -61,11 +63,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Alamofireを使用したAPIリクエスト
         AF.request(loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             switch response.result {
-            case .success:
-                print("ログイン成功")
-                DispatchQueue.main.async {
-                    // ログイン成功時のUI更新処理
-                    self.uiLabel.text = "ログイン成功"
+            case .success(let value):
+                // JSONをDictionaryにキャスト
+                if let dictionary = value as? [String: Any],
+                   // トークンを取得
+                   let token = dictionary["token"] as? String {
+                    let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
+                    // トークンをKeychainに保存
+                    keychain["token"] = token
+                    print("ログイン成功")
+                    DispatchQueue.main.async {
+                        // ログイン成功時のUI更新処理
+                        self.uiLabel.text = "ログイン成功"
+                    }
                 }
             case .failure:
                 print("ログイン失敗")

@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import KeychainAccess
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -22,8 +23,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         userNameTextField.delegate = self
         updateSignUpButtonState()
-        //        signUpButton.isEnabled = false
-        //        emailTextField.delegate = self
     }
     
     //textFieldにテキストが入力されたり変更されたりするときに呼ばれるdelegate
@@ -71,7 +70,18 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         AF.request(signupURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             switch response.result {
-            case .success:
+            case .success(let value):
+                // JSONをDictionaryにキャスト
+                if let dictionary = value as? [String: Any],
+                   // トークンを取得
+                   let token = dictionary["token"] as? String {
+                    let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
+                    // トークンをKeychainに保存
+                    keychain["token"] = token
+                    print(token)
+                    // UserDefaults.standard.set(name, forKey: "username") 個人情報は全てkeychainへ
+                    // UserDefaults.standard.set(email, forKey: "email")
+                }
                 print("サインアップ成功")
                 DispatchQueue.main.async {
                     // サインアップ成功時のUI更新処理
@@ -80,7 +90,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             case .failure:
                 print("サインアップ失敗")
                 DispatchQueue.main.async {
-                    self.uiLabel.text = "ログイン失敗"
+                    self.uiLabel.text = "サインアップ失敗"
                 }
             }
         }
