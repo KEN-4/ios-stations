@@ -60,25 +60,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             "password": password
         ]
         
-        // Alamofireを使用したAPIリクエスト
-        AF.request(loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+        struct LoginResponse: Decodable {
+            let token: String
+        }
+        
+        AF.request(loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodable(of: LoginResponse.self) { response in
             switch response.result {
-            case .success(let value):
-                // JSONをDictionaryにキャスト
-                if let dictionary = value as? [String: Any],
-                   // トークンを取得
-                   let token = dictionary["token"] as? String {
-                    let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
-                    // トークンをKeychainに保存
-                    keychain["token"] = token
-                    print("ログイン成功")
-                    DispatchQueue.main.async {
-                        // ログイン成功時のUI更新処理
-                        self.uiLabel.text = "ログイン成功"
-                    }
+            case .success(let loginResponse):
+                print("レスポンスデータ: \(loginResponse)")
+                let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
+                keychain["token"] = loginResponse.token
+                print("ログイン成功: Token = \(loginResponse.token)")
+                DispatchQueue.main.async {
+                    self.uiLabel.text = "ログイン成功"
                 }
-            case .failure:
-                print("ログイン失敗")
+            case .failure(let error):
+                print("ログイン失敗: \(error)")
                 DispatchQueue.main.async {
                     self.uiLabel.text = "ログイン失敗"
                 }

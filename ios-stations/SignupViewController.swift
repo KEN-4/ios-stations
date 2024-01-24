@@ -66,33 +66,27 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             "email": email,
             "password": password
         ]
-
         
-        AF.request(signupURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+        struct SignupResponse: Decodable {
+            let token: String
+        }
+
+        AF.request(signupURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodable(of: SignupResponse.self) { response in
             switch response.result {
-            case .success(let value):
-                // JSONをDictionaryにキャスト
-                if let dictionary = value as? [String: Any],
-                   // トークンを取得
-                   let token = dictionary["token"] as? String {
-                    let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
-                    // トークンをKeychainに保存
-                    keychain["token"] = token
-                    print(token)
-                    // UserDefaults.standard.set(name, forKey: "username") 個人情報は全てkeychainへ
-                    // UserDefaults.standard.set(email, forKey: "email")
-                }
-                print("サインアップ成功")
+            case .success(let signupResponse):
+                let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
+                keychain["token"] = signupResponse.token
+                print("サインアップ成功: Token = \(signupResponse.token)")
                 DispatchQueue.main.async {
-                    // サインアップ成功時のUI更新処理
                     self.uiLabel.text = "サインアップ成功"
                 }
-            case .failure:
-                print("サインアップ失敗")
+            case .failure(let error):
+                print("サインアップ失敗: \(error)")
                 DispatchQueue.main.async {
                     self.uiLabel.text = "サインアップ失敗"
                 }
             }
         }
+
     }
 }
