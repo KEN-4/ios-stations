@@ -73,6 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print("ログイン成功: Token = \(loginResponse.token)")
                 DispatchQueue.main.async {
                     self.uiLabel.text = "ログイン成功"
+                    self.performSegue(withIdentifier: "showFirstViewControllerFromLogin", sender: nil)
                 }
             case .failure(let error):
                 print("ログイン失敗: \(error)")

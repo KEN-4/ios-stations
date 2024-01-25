@@ -29,7 +29,7 @@ class InitialViewController: UIViewController {
     }
     
     func navigateToFirstViewController() {
-        performSegue(withIdentifier: "showFirstViewController", sender: self)
+        performSegue(withIdentifier: "showFirstViewControllerFromInitial", sender: self)
     }
     
     func navigateToLoginSignupViewController() {

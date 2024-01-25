@@ -79,6 +79,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 print("サインアップ成功: Token = \(signupResponse.token)")
                 DispatchQueue.main.async {
                     self.uiLabel.text = "サインアップ成功"
+                    self.performSegue(withIdentifier: "showFirstViewControllerFromSignup", sender: nil)
+
                 }
             case .failure(let error):
                 print("サインアップ失敗: \(error)")

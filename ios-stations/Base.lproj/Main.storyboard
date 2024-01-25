@@ -91,6 +91,7 @@
                         <outlet property="signUpButton" destination="oZo-F2-JrO" id="UVh-vn-lW0"/>
                         <outlet property="uiLabel" destination="F3n-xB-Maj" id="89E-a5-TrV"/>
                         <outlet property="userNameTextField" destination="6Hr-58-95X" id="T5Q-QK-Ac2"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showFirstViewControllerFromSignup" id="MzM-Co-RVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0x-i9-tst" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,7 +107,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0fZ-Gu-KhZ">
-                                <rect key="frame" x="0.0" y="0.0" width="392" height="666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="392" height="638.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseCell" id="nOK-tR-NdB" customClass="BookCell" customModule="ios_stations" customModuleProvider="target">
@@ -161,7 +162,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdt-RP-Ovl">
-                                <rect key="frame" x="60" y="726" width="273" height="32"/>
+                                <rect key="frame" x="60" y="658.33333333333337" width="273" height="32"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background">
@@ -182,29 +183,146 @@
                                     <action selector="touchFetchBooksButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tsd-yt-Qf2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGx-Zk-rOh">
+                                <rect key="frame" x="60" y="715.33333333333337" width="273" height="28"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="UserInformation">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                                <font key="NSOriginalFont" size="12" name="Arial-BoldMT"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="userInformationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FfA-S7-FHs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-yd-cKq">
+                                <rect key="frame" x="60" y="768.33333333333337" width="273" height="29.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Logout">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchFetchBooksButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yH7-vZ-Etl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d0z-yd-cKq" secondAttribute="bottom" constant="20" id="4z5-MW-5YQ"/>
+                            <constraint firstItem="xdt-RP-Ovl" firstAttribute="top" secondItem="0fZ-Gu-KhZ" secondAttribute="bottom" constant="20" id="95I-rO-J3S"/>
+                            <constraint firstItem="d0z-yd-cKq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="FET-dG-qol"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d0z-yd-cKq" secondAttribute="trailing" constant="60" id="GoU-vc-ajY"/>
                             <constraint firstItem="xdt-RP-Ovl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="H9e-eN-OW6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YGx-Zk-rOh" secondAttribute="trailing" constant="60" id="R7W-1X-Ya4"/>
                             <constraint firstItem="0fZ-Gu-KhZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Spe-8d-Yc1"/>
                             <constraint firstItem="0fZ-Gu-KhZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WMv-sy-bYn"/>
-                            <constraint firstItem="xdt-RP-Ovl" firstAttribute="top" secondItem="0fZ-Gu-KhZ" secondAttribute="bottom" constant="60" id="bap-jq-EvG"/>
+                            <constraint firstItem="d0z-yd-cKq" firstAttribute="top" secondItem="YGx-Zk-rOh" secondAttribute="bottom" constant="25" id="X1o-TL-81z"/>
+                            <constraint firstItem="YGx-Zk-rOh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="ZdV-1f-wKP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0fZ-Gu-KhZ" secondAttribute="trailing" constant="1" id="gNn-oh-yTy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xdt-RP-Ovl" secondAttribute="bottom" constant="60" id="m1F-96-kxe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xdt-RP-Ovl" secondAttribute="trailing" constant="60" id="mAy-bQ-RoP"/>
+                            <constraint firstItem="YGx-Zk-rOh" firstAttribute="top" secondItem="xdt-RP-Ovl" secondAttribute="bottom" constant="25" id="pR4-L4-DNQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zqv-Xh-08l"/>
                     <connections>
                         <outlet property="fetchBooksButton" destination="xdt-RP-Ovl" id="Wyk-1p-O3l"/>
                         <outlet property="tableView" destination="0fZ-Gu-KhZ" id="P3x-Xr-8Wr"/>
+                        <outlet property="tapUserInfromation" destination="YGx-Zk-rOh" id="36s-3e-fWw"/>
                         <segue destination="MlH-4i-GFg" kind="show" identifier="SecondViewController" id="Dzx-x0-K9N"/>
+                        <segue destination="KoY-3c-kqp" kind="show" identifier="showUserInformationViewController" id="zWv-9r-JD5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9657.2519083969455" y="55.633802816901408"/>
+            <point key="canvasLocation" x="8209.9236641221378" y="55.633802816901408"/>
+        </scene>
+        <!--User Information View Controller-->
+        <scene sceneID="91w-A7-Omf">
+            <objects>
+                <viewController storyboardIdentifier="UserInformationViewController" id="KoY-3c-kqp" customClass="UserInformationViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WFz-Nj-raM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-2j-R0W">
+                                <rect key="frame" x="50" y="334" width="293" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Your user name is">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="25"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="現在のユーザ名" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d91-gD-kBp">
+                                <rect key="frame" x="50" y="394" width="293" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcv-yU-h2B">
+                                <rect key="frame" x="100" y="566" width="193" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ユーザー情報更新"/>
+                                <connections>
+                                    <action selector="changeUserInformationButtonTapped:" destination="KoY-3c-kqp" eventType="touchUpInside" id="X4r-eR-OZE"/>
+                                    <action selector="signupButtonTapped:" destination="4TX-VY-U9E" eventType="touchUpInside" id="aBJ-Ra-suh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfx-xa-YJL">
+                                <rect key="frame" x="10" y="251" width="373" height="22.666666666666515"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新しいユーザ名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JFu-at-xLK">
+                                <rect key="frame" x="50" y="463" width="293" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W0B-7M-5L2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4wd-yd-xWi"/>
+                    <connections>
+                        <outlet property="changeUserInformationButton" destination="Kcv-yU-h2B" id="1S2-YD-mLj"/>
+                        <outlet property="currentUserNameTextField" destination="d91-gD-kBp" id="Pve-0e-LhF"/>
+                        <outlet property="newUserNameTextField" destination="JFu-at-xLK" id="czS-gW-XtB"/>
+                        <outlet property="uiLabel" destination="Dfx-xa-YJL" id="egF-Jo-FCW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TzO-fp-MKy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9272.519083969466" y="400.7042253521127"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="cKt-PF-Mxf">
@@ -220,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikU-Uk-ea2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10773.282442748092" y="55.633802816901408"/>
+            <point key="canvasLocation" x="9273" y="-288"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oQA-59-ywF">
@@ -361,6 +479,7 @@
                         <outlet property="loginButton" destination="6jQ-je-FKq" id="Smv-53-FIE"/>
                         <outlet property="passwordTextField" destination="GYy-aw-Jev" id="q9P-na-20z"/>
                         <outlet property="uiLabel" destination="OYf-NF-doE" id="AOD-XQ-WVZ"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showFirstViewControllerFromLogin" id="ON0-ob-puJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OY2-Nh-JdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -386,7 +505,7 @@
                     <navigationItem key="navigationItem" id="Arr-UI-LGy"/>
                     <connections>
                         <segue destination="nt2-wo-fDn" kind="show" identifier="showViewController" id="gJn-t8-IL4"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showFirstViewController" id="kwc-G1-F8q"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showFirstViewControllerFromInitial" id="kwc-G1-F8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQu-we-kgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -412,6 +531,9 @@
             <point key="canvasLocation" x="5713.740458015267" y="55.633802816901408"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MzM-Co-RVN"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="book" width="384" height="384"/>
         <namedColor name="Main">
@@ -419,6 +541,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

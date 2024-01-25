@@ -17,11 +17,16 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     fileprivate let refreshCtl = UIRefreshControl()
     @IBOutlet weak var fetchBooksButton: UIButton!
+    @IBOutlet weak var tapUserInfromation: UIButton!
     
     // ボタンをタップしたときに呼ばれるアクション
     @IBAction func touchFetchBooksButton(_ sender: Any) {
         fetchBooks()
         print("Touched!")
+    }
+    
+    @IBAction func userInformationTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "showUserInformationViewController", sender: nil)
     }
     
     // ビューがロードされたときに呼ばれるメソッド

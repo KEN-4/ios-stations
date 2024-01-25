@@ -25,6 +25,7 @@
 		C07AFC662B5F3FDB00C7567D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07AFC652B5F3FDB00C7567D /* Validation.swift */; };
 		C07AFC6A2B5F46F400C7567D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C07AFC692B5F46F400C7567D /* KeychainAccess */; };
 		C07AFC6C2B5F488700C7567D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07AFC6B2B5F488700C7567D /* InitialViewController.swift */; };
+		C07AFC6E2B62314A00C7567D /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07AFC6D2B62314A00C7567D /* UserInformationViewController.swift */; };
 		C07F9F622B53C2FC00E068B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F612B53C2FC00E068B4 /* ViewController.swift */; };
 		C07F9F642B5551CB00E068B4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F632B5551CB00E068B4 /* SignupViewController.swift */; };
 		C07F9F682B5553A400E068B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F672B5553A400E068B4 /* LoginViewController.swift */; };
@@ -73,6 +74,7 @@
 		BE713149268B4CA400E3EAB8 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		C07AFC652B5F3FDB00C7567D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		C07AFC6B2B5F488700C7567D /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		C07AFC6D2B62314A00C7567D /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		C07F9F612B53C2FC00E068B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C07F9F632B5551CB00E068B4 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		C07F9F672B5553A400E068B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				C07F9F672B5553A400E068B4 /* LoginViewController.swift */,
 				C07AFC652B5F3FDB00C7567D /* Validation.swift */,
 				C07AFC6B2B5F488700C7567D /* InitialViewController.swift */,
+				C07AFC6D2B62314A00C7567D /* UserInformationViewController.swift */,
 			);
 			path = "ios-stations";
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				C07F9F622B53C2FC00E068B4 /* ViewController.swift in Sources */,
 				BE245145266FBEE00038AD81 /* FirstViewController.swift in Sources */,
 				BE7131392685ED7600E3EAB8 /* BookAPIClient.swift in Sources */,
+				C07AFC6E2B62314A00C7567D /* UserInformationViewController.swift in Sources */,
 				BE245141266FBEE00038AD81 /* AppDelegate.swift in Sources */,
 				BE7131372685ED0F00E3EAB8 /* Book.swift in Sources */,
 				BE245143266FBEE00038AD81 /* SceneDelegate.swift in Sources */,
