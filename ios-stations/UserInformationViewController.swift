@@ -3,7 +3,7 @@ import UIKit
 import Alamofire
 import KeychainAccess
 
-class UserInformationViewController: UIViewController {
+class UserInformationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var currentUserNameTextField: UITextField!
     @IBOutlet weak var newUserNameTextField: UITextField!
@@ -12,14 +12,28 @@ class UserInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newUserNameTextField.delegate = self
+        updateChangeUserInformationButtonState()
         fetchUserProfile()
         
     }
     
+    // テキストフィールドにテキストが入力されるたびに呼ばれる
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        updateChangeUserInformationButtonState()
+        return true
+    }
+    
+    // ボタンの状態を更新するメソッド
+    func updateChangeUserInformationButtonState() {
+        let isNewUsernameEntered = !(newUserNameTextField.text?.isEmpty ?? true)
+        changeUserInformationButton.isEnabled = isNewUsernameEntered
+    }
+    
     @IBAction func changeUserInformationButtonTapped(_ sender: Any) {
         // 新しいユーザー名をテキストフィールドから取得
-        guard let newUsername = newUserNameTextField.text, !newUsername.isEmpty else {
-            print("新しいユーザー名が入力されていません")
+        guard let newUsername = newUserNameTextField.text, newUsername.isName() else {
+            uiLabel.text = "ユーザー名は3文字以上で入力してください"
             return
         }
         
@@ -74,9 +88,13 @@ class UserInformationViewController: UIViewController {
             switch response.result {
             case .success:
                 print("ユーザ情報の更新に成功しました")
-                self.currentUserNameTextField.text = newUsername
+                self.uiLabel.text = "ユーザ情報の更新に成功しました"
+                self.fetchUserProfile()
+                // これが間違っている可能性があるため、もう一度読み込みを行う
+                // self.currentUserNameTextField.text = newUsername
             case .failure(let error):
                 print("更新に失敗しました: \(error)")
+                self.uiLabel.text = "ユーザ情報の更新に失敗しました"
             }
         }
     }
