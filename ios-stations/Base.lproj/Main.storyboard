@@ -266,9 +266,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-2j-R0W">
-                                <rect key="frame" x="50" y="334" width="293" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-2j-R0W">
+                                <rect key="frame" x="50" y="335.66666666666669" width="293" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Your user name is">
                                         <attributes>
@@ -279,15 +278,13 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="現在のユーザ名" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d91-gD-kBp">
-                                <rect key="frame" x="50" y="394" width="293" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="現在のユーザ名" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d91-gD-kBp">
+                                <rect key="frame" x="50" y="395.66666666666669" width="293" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcv-yU-h2B">
-                                <rect key="frame" x="100" y="566" width="193" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcv-yU-h2B">
+                                <rect key="frame" x="100" y="563.66666666666663" width="193" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ユーザー情報更新"/>
                                 <connections>
@@ -295,22 +292,37 @@
                                     <action selector="signupButtonTapped:" destination="4TX-VY-U9E" eventType="touchUpInside" id="aBJ-Ra-suh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfx-xa-YJL">
-                                <rect key="frame" x="10" y="251" width="373" height="22.666666666666515"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfx-xa-YJL">
+                                <rect key="frame" x="10" y="252.99999999999997" width="373" height="22.666666666666657"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新しいユーザ名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JFu-at-xLK">
-                                <rect key="frame" x="50" y="463" width="293" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新しいユーザ名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JFu-at-xLK">
+                                <rect key="frame" x="50" y="459.66666666666669" width="293" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W0B-7M-5L2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W0B-7M-5L2" firstAttribute="trailing" secondItem="JFu-at-xLK" secondAttribute="trailing" constant="50" id="BUe-VK-MiO"/>
+                            <constraint firstItem="Dfx-xa-YJL" firstAttribute="top" secondItem="W0B-7M-5L2" secondAttribute="top" constant="150" id="Kqc-9C-myP"/>
+                            <constraint firstItem="W0B-7M-5L2" firstAttribute="trailing" secondItem="Kcv-yU-h2B" secondAttribute="trailing" constant="100" id="LZB-xd-yf6"/>
+                            <constraint firstItem="W0B-7M-5L2" firstAttribute="trailing" secondItem="kKd-2j-R0W" secondAttribute="trailing" constant="50" id="Tue-kC-nw9"/>
+                            <constraint firstItem="d91-gD-kBp" firstAttribute="leading" secondItem="W0B-7M-5L2" secondAttribute="leading" constant="50" id="VD0-de-Kff"/>
+                            <constraint firstItem="Kcv-yU-h2B" firstAttribute="leading" secondItem="W0B-7M-5L2" secondAttribute="leading" constant="100" id="WY6-qo-NM0"/>
+                            <constraint firstItem="Dfx-xa-YJL" firstAttribute="leading" secondItem="W0B-7M-5L2" secondAttribute="leading" constant="10" id="a5S-0e-kTW"/>
+                            <constraint firstItem="JFu-at-xLK" firstAttribute="leading" secondItem="W0B-7M-5L2" secondAttribute="leading" constant="50" id="a7q-he-nse"/>
+                            <constraint firstItem="kKd-2j-R0W" firstAttribute="top" secondItem="Dfx-xa-YJL" secondAttribute="bottom" constant="60" id="bCN-Jg-cPs"/>
+                            <constraint firstItem="W0B-7M-5L2" firstAttribute="trailing" secondItem="d91-gD-kBp" secondAttribute="trailing" constant="50" id="nMR-Q1-YFI"/>
+                            <constraint firstItem="d91-gD-kBp" firstAttribute="top" secondItem="kKd-2j-R0W" secondAttribute="bottom" constant="30" id="ocs-29-e2B"/>
+                            <constraint firstItem="Kcv-yU-h2B" firstAttribute="top" secondItem="JFu-at-xLK" secondAttribute="bottom" constant="70" id="skG-SC-WFV"/>
+                            <constraint firstItem="kKd-2j-R0W" firstAttribute="leading" secondItem="W0B-7M-5L2" secondAttribute="leading" constant="50" id="ups-B4-o1h"/>
+                            <constraint firstItem="JFu-at-xLK" firstAttribute="top" secondItem="d91-gD-kBp" secondAttribute="bottom" constant="30" id="vhK-B1-6NW"/>
+                            <constraint firstItem="W0B-7M-5L2" firstAttribute="trailing" secondItem="Dfx-xa-YJL" secondAttribute="trailing" constant="10" id="yAK-f4-QlP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4wd-yd-xWi"/>
                     <connections>
@@ -532,7 +544,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MzM-Co-RVN"/>
+        <segue reference="ON0-ob-puJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book" width="384" height="384"/>

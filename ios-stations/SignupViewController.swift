@@ -43,8 +43,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {
-        guard let name = userNameTextField.text, !name.isEmpty else {
-            self.uiLabel.text = "ユーザー名を入力してください"
+        guard let name = userNameTextField.text, name.isName() else {
+            self.uiLabel.text = "ユーザー名は3文字以上で入力してください"
             return
         }
         guard let email = emailTextField.text, !email.isEmpty, email.isEmail() else {

@@ -41,7 +41,6 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     }
     
     // ユーザー情報を取得する関数
-    // この関数には引数は必要ありません
     func fetchUserProfile() {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
         guard let token = keychain["token"] else {
