@@ -223,6 +223,7 @@
                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="logoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bzn-0a-U2y"/>
                                     <action selector="touchFetchBooksButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yH7-vZ-Etl"/>
                                 </connections>
                             </button>
@@ -248,10 +249,12 @@
                     <navigationItem key="navigationItem" id="zqv-Xh-08l"/>
                     <connections>
                         <outlet property="fetchBooksButton" destination="xdt-RP-Ovl" id="Wyk-1p-O3l"/>
+                        <outlet property="logoutButton" destination="d0z-yd-cKq" id="9NV-Ab-ZXi"/>
                         <outlet property="tableView" destination="0fZ-Gu-KhZ" id="P3x-Xr-8Wr"/>
                         <outlet property="tapUserInfromation" destination="YGx-Zk-rOh" id="36s-3e-fWw"/>
                         <segue destination="MlH-4i-GFg" kind="show" identifier="SecondViewController" id="Dzx-x0-K9N"/>
                         <segue destination="KoY-3c-kqp" kind="show" identifier="showUserInformationViewController" id="zWv-9r-JD5"/>
+                        <segue destination="SRy-8h-NOw" kind="modal" identifier="showInitialViewController" id="V3V-3U-AhI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -530,7 +533,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SRy-8h-NOw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yFv-wg-N2Z">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -544,7 +547,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ON0-ob-puJ"/>
+        <segue reference="kwc-G1-F8q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book" width="384" height="384"/>

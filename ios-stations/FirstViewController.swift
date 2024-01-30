@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class FirstViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class FirstViewController: UIViewController {
     fileprivate let refreshCtl = UIRefreshControl()
     @IBOutlet weak var fetchBooksButton: UIButton!
     @IBOutlet weak var tapUserInfromation: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     // ボタンをタップしたときに呼ばれるアクション
     @IBAction func touchFetchBooksButton(_ sender: Any) {
@@ -27,6 +29,19 @@ class FirstViewController: UIViewController {
     
     @IBAction func userInformationTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showUserInformationViewController", sender: nil)
+    }
+    
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
+        do {
+            try keychain.remove("token") // トークンをKeychainから削除
+            print("ログアウト成功")
+            // ログアウト後の処理（例えば、ログイン画面に戻るなど）
+            performSegue(withIdentifier: "showInitialViewController", sender: nil)
+        } catch let error {
+            print("ログアウト失敗: \(error)")
+        }
     }
     
     // ビューがロードされたときに呼ばれるメソッド

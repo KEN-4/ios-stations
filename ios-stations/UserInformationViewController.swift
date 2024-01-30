@@ -59,8 +59,10 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         AF.request("https://railway.bookreview.techtrain.dev/users", method: .get, headers: headers).responseDecodable(of: UserProfile.self) { response in
             switch response.result {
             case .success(let userProfile):
-                self.currentUserNameTextField.text = userProfile.name
-                print("ユーザー名: \(userProfile.name)")
+                DispatchQueue.main.async {
+                    self.currentUserNameTextField.text = userProfile.name
+                    print("ユーザー名: \(userProfile.name)")
+                }
             case .failure(let error):
                 print("エラー: \(error)")
             }
@@ -83,17 +85,25 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
             "name": newUsername
         ]
         
-        AF.request("https://railway.bookreview.techtrain.dev/users", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        struct NewUserProfile: Decodable {
+            let name: String
+        }
+        
+        AF.request("https://railway.bookreview.techtrain.dev/users", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: NewUserProfile.self) { response in
             switch response.result {
-            case .success:
+            case .success(let responseData):
                 print("ユーザ情報の更新に成功しました")
-                self.uiLabel.text = "ユーザ情報の更新に成功しました"
-                self.fetchUserProfile()
-                // これが間違っている可能性があるため、もう一度読み込みを行う
-                // self.currentUserNameTextField.text = newUsername
-            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.uiLabel.text = "ユーザ情報の更新に成功しました"
+                    self.fetchUserProfile()
+                    // これが間違っている可能性があるため、もう一度読み込みを行う
+                    // self.currentUserNameTextField.text = newUsername
+                }
+             case .failure(let error):
                 print("更新に失敗しました: \(error)")
-                self.uiLabel.text = "ユーザ情報の更新に失敗しました"
+                DispatchQueue.main.async {
+                    self.uiLabel.text = "ユーザ情報の更新に失敗しました"
+                }
             }
         }
     }
