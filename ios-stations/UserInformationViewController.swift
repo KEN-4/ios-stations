@@ -5,7 +5,7 @@ import KeychainAccess
 
 class UserInformationViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var currentUserNameTextField: UITextField!
+    @IBOutlet weak var currentUserNameLabel: UILabel!
     @IBOutlet weak var newUserNameTextField: UITextField!
     @IBOutlet weak var changeUserInformationButton: UIButton!
     @IBOutlet weak var uiLabel: UILabel!
@@ -43,7 +43,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     // ユーザー情報を取得する関数
     func fetchUserProfile() {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
-        guard let token = keychain["token"] else {
+        guard let token = keychain[TokenKey.token] else {
             print("認証トークンがありません")
             return
         }
@@ -60,7 +60,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
             switch response.result {
             case .success(let userProfile):
                 DispatchQueue.main.async {
-                    self.currentUserNameTextField.text = userProfile.name
+                    self.currentUserNameLabel.text = userProfile.name
                     print("ユーザー名: \(userProfile.name)")
                 }
             case .failure(let error):
@@ -95,9 +95,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
                 print("ユーザ情報の更新に成功しました")
                 DispatchQueue.main.async {
                     self.uiLabel.text = "ユーザ情報の更新に成功しました"
-                    self.fetchUserProfile()
-                    // これが間違っている可能性があるため、もう一度読み込みを行う
-                    // self.currentUserNameTextField.text = newUsername
+                    self.currentUserNameLabel.text = newUsername
                 }
              case .failure(let error):
                 print("更新に失敗しました: \(error)")

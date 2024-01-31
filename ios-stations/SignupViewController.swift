@@ -75,8 +75,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             switch response.result {
             case .success(let signupResponse):
                 let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
-                keychain["token"] = signupResponse.token
+                keychain[TokenKey.token] = signupResponse.token
                 print("サインアップ成功: Token = \(signupResponse.token)")
+                print("サインアップ成功: Token = \(TokenKey.token)")
                 DispatchQueue.main.async {
                     self.uiLabel.text = "サインアップ成功"
                     self.performSegue(withIdentifier: "showFirstViewControllerFromSignup", sender: nil)
@@ -91,4 +92,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+}
+
+enum TokenKey {
+    static let token = "token"
 }

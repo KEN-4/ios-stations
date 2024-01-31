@@ -17,7 +17,7 @@ class InitialViewController: UIViewController {
     
     func checkLoginStatus() {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
-        if keychain["token"] != nil {
+        if keychain[TokenKey.token] != nil {
             // トークンが存在する場合
             navigateToFirstViewController()
             print("exist")

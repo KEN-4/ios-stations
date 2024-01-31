@@ -69,7 +69,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             case .success(let loginResponse):
                 print("レスポンスデータ: \(loginResponse)")
                 let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
-                keychain["token"] = loginResponse.token
+                keychain[TokenKey.token] = loginResponse.token
                 print("ログイン成功: Token = \(loginResponse.token)")
                 DispatchQueue.main.async {
                     self.uiLabel.text = "ログイン成功"
