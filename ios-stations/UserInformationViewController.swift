@@ -92,7 +92,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         AF.request("https://railway.bookreview.techtrain.dev/users", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: NewUserProfile.self) { response in
             switch response.result {
             case .success(let responseData):
-                print("ユーザ情報の更新に成功しました")
+                print("ユーザ情報の更新に成功しました: \(responseData)")
                 DispatchQueue.main.async {
                     self.uiLabel.text = "ユーザ情報の更新に成功しました"
                     self.currentUserNameLabel.text = newUsername

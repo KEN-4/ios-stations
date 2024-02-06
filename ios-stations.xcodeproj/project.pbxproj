@@ -31,6 +31,7 @@
 		C07F9F682B5553A400E068B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F9F672B5553A400E068B4 /* LoginViewController.swift */; };
 		C0A5B01D2B3846DC00A81C46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0A5B01F2B3846DC00A81C46 /* InfoPlist.strings */; };
 		C0A5B0222B428C1B00A81C46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0A5B0212B428C1B00A81C46 /* Alamofire */; };
+		E79BC9ED2B71FD1E004E1923 /* ReviewSubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		C07F9F632B5551CB00E068B4 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		C07F9F672B5553A400E068B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0A5B01E2B3846DC00A81C46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSubmissionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				C07AFC652B5F3FDB00C7567D /* Validation.swift */,
 				C07AFC6B2B5F488700C7567D /* InitialViewController.swift */,
 				C07AFC6D2B62314A00C7567D /* UserInformationViewController.swift */,
+				E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */,
 			);
 			path = "ios-stations";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				BE7131392685ED7600E3EAB8 /* BookAPIClient.swift in Sources */,
 				C07AFC6E2B62314A00C7567D /* UserInformationViewController.swift in Sources */,
 				BE245141266FBEE00038AD81 /* AppDelegate.swift in Sources */,
+				E79BC9ED2B71FD1E004E1923 /* ReviewSubmissionViewController.swift in Sources */,
 				BE7131372685ED0F00E3EAB8 /* Book.swift in Sources */,
 				BE245143266FBEE00038AD81 /* SceneDelegate.swift in Sources */,
 				C07AFC662B5F3FDB00C7567D /* Validation.swift in Sources */,

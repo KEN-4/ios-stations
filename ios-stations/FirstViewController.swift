@@ -35,9 +35,10 @@ class FirstViewController: UIViewController {
     @IBAction func logoutButtonTapped(_ sender: Any) {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
         do {
-            try keychain.remove("token") // トークンをKeychainから削除
+            // トークンをKeychainから削除
+            try keychain.remove("token")
             print("ログアウト成功")
-            // ログアウト後の処理（例えば、ログイン画面に戻るなど）
+            // ログアウト後の処理
             performSegue(withIdentifier: "showInitialViewController", sender: nil)
         } catch let error {
             print("ログアウト失敗: \(error)")
@@ -57,12 +58,20 @@ class FirstViewController: UIViewController {
     
     // 書籍データを取得するメソッド
     @objc private func fetchBooks() {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
         apiClient.fetchBooks(offset: 0) { [weak self] books in
-            guard let books = books else { return }
-            print("Fetched Books")
-            self?.books = books
-            self?.tableView.reloadData()
-            self?.refreshCtl.endRefreshing()
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview() // アニメーション停止後にインジケータをビューから削除
+                guard let books = books else { return }
+                print("Fetched Books")
+                self?.books = books
+                self?.tableView.reloadData()
+                self?.refreshCtl.endRefreshing()
+            }
         }
     }
     

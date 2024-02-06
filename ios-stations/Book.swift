@@ -10,4 +10,5 @@ struct Book: Decodable {
     let detail: String
     let review: String
     let reviewer: String
+    let isMine: Bool?
 }
