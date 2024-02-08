@@ -20,6 +20,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var fetchBooksButton: UIButton!
     @IBOutlet weak var tapUserInfromation: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var submissionButton: UIButton!
     
     // ボタンをタップしたときに呼ばれるアクション
     @IBAction func touchFetchBooksButton(_ sender: Any) {
@@ -30,7 +31,10 @@ class FirstViewController: UIViewController {
     @IBAction func userInformationTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showUserInformationViewController", sender: nil)
     }
-    
+
+    @IBAction func submissonButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "showReviewSubmissionViewController", sender: nil)
+    }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")

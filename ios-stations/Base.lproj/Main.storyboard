@@ -241,6 +241,9 @@
                                     </attributedString>
                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="submissonButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4le-db-dYW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-yd-cKq">
                                 <rect key="frame" x="60" y="793" width="273" height="29.666666666666629"/>
@@ -290,6 +293,7 @@
                     <connections>
                         <outlet property="fetchBooksButton" destination="xdt-RP-Ovl" id="Wyk-1p-O3l"/>
                         <outlet property="logoutButton" destination="d0z-yd-cKq" id="9NV-Ab-ZXi"/>
+                        <outlet property="submissionButton" destination="dEK-Xn-8Go" id="lof-C9-bh9"/>
                         <outlet property="tableView" destination="0fZ-Gu-KhZ" id="P3x-Xr-8Wr"/>
                         <outlet property="tapUserInfromation" destination="YGx-Zk-rOh" id="36s-3e-fWw"/>
                         <segue destination="MlH-4i-GFg" kind="show" identifier="SecondViewController" id="Dzx-x0-K9N"/>
@@ -381,21 +385,100 @@
             </objects>
             <point key="canvasLocation" x="11004" y="56"/>
         </scene>
-        <!--Review Submission View Controller-->
+        <!--ReviewSubmissionViewController-->
         <scene sceneID="H9l-50-NV5">
             <objects>
-                <viewController storyboardIdentifier="ReviewSubmissionViewController" id="CiT-Uy-fgu" customClass="ReviewSubmissionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewSubmissionViewController" title="ReviewSubmissionViewController" id="CiT-Uy-fgu" customClass="ReviewSubmissionViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EDW-ay-TXG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GX7-Xl-Mtb">
+                                <rect key="frame" x="50" y="146.66666666666666" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUm-Gq-wg9">
+                                <rect key="frame" x="50" y="210.66666666666666" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Review" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-hT-5F9">
+                                <rect key="frame" x="50" y="458.66666666666669" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vt9-rJ-sov">
+                                <rect key="frame" x="50" y="692.66666666666663" width="293" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="Main"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Submission">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Arial-BoldMT"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="CiT-Uy-fgu" eventType="touchUpInside" id="EBT-Cv-hLW"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Detail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1V-9m-Odb">
+                                <rect key="frame" x="50" y="274.66666666666669" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L10-7v-pSd">
+                                <rect key="frame" x="50" y="94" width="293" height="22.666666666666671"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HhX-IP-ara"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="O1V-9m-Odb" firstAttribute="leading" secondItem="HhX-IP-ara" secondAttribute="leading" constant="50" id="1S6-Nk-36f"/>
+                            <constraint firstItem="L10-7v-pSd" firstAttribute="leading" secondItem="HhX-IP-ara" secondAttribute="leading" constant="50" id="7js-nI-TP5"/>
+                            <constraint firstItem="HhX-IP-ara" firstAttribute="trailing" secondItem="vt9-rJ-sov" secondAttribute="trailing" constant="50" id="7p4-Cy-sVS"/>
+                            <constraint firstItem="vt9-rJ-sov" firstAttribute="leading" secondItem="HhX-IP-ara" secondAttribute="leading" constant="50" id="Doi-RU-luX"/>
+                            <constraint firstItem="HhX-IP-ara" firstAttribute="trailing" secondItem="SUm-Gq-wg9" secondAttribute="trailing" constant="50" id="FEd-2g-fPk"/>
+                            <constraint firstItem="SUm-Gq-wg9" firstAttribute="leading" secondItem="HhX-IP-ara" secondAttribute="leading" constant="50" id="HHu-1l-CkP"/>
+                            <constraint firstItem="SUm-Gq-wg9" firstAttribute="top" secondItem="GX7-Xl-Mtb" secondAttribute="bottom" constant="30" id="Iib-MD-m5A"/>
+                            <constraint firstItem="HhX-IP-ara" firstAttribute="trailing" secondItem="O1V-9m-Odb" secondAttribute="trailing" constant="50" id="N4V-JQ-sxP"/>
+                            <constraint firstItem="O1V-9m-Odb" firstAttribute="top" secondItem="SUm-Gq-wg9" secondAttribute="bottom" constant="30" id="XUZ-he-8Si"/>
+                            <constraint firstItem="FWa-hT-5F9" firstAttribute="leading" secondItem="HhX-IP-ara" secondAttribute="leading" constant="50" id="a9c-Rg-yyf"/>
+                            <constraint firstItem="HhX-IP-ara" firstAttribute="trailing" secondItem="GX7-Xl-Mtb" secondAttribute="trailing" constant="50" id="bQ0-YU-RM1"/>
+                            <constraint firstItem="L10-7v-pSd" firstAttribute="top" secondItem="HhX-IP-ara" secondAttribute="top" constant="50" id="kyT-xo-ePd"/>
+                            <constraint firstItem="HhX-IP-ara" firstAttribute="trailing" secondItem="FWa-hT-5F9" secondAttribute="trailing" constant="50" id="ms0-Hg-E9i"/>
+                            <constraint firstItem="GX7-Xl-Mtb" firstAttribute="leading" secondItem="HhX-IP-ara" secondAttribute="leading" constant="50" id="pcf-id-ehH"/>
+                            <constraint firstItem="HhX-IP-ara" firstAttribute="trailing" secondItem="L10-7v-pSd" secondAttribute="trailing" constant="50" id="sNh-4a-1vU"/>
+                            <constraint firstItem="HhX-IP-ara" firstAttribute="trailing" secondItem="vt9-rJ-sov" secondAttribute="trailing" constant="50" id="sfI-of-viY"/>
+                            <constraint firstItem="GX7-Xl-Mtb" firstAttribute="top" secondItem="L10-7v-pSd" secondAttribute="bottom" constant="30" id="thW-D9-qCl"/>
+                            <constraint firstItem="vt9-rJ-sov" firstAttribute="top" secondItem="FWa-hT-5F9" secondAttribute="bottom" constant="200" id="uz5-CE-rRQ"/>
+                            <constraint firstItem="vt9-rJ-sov" firstAttribute="leading" secondItem="HhX-IP-ara" secondAttribute="leading" constant="50" id="wZ2-Ze-hRi"/>
+                            <constraint firstItem="FWa-hT-5F9" firstAttribute="top" secondItem="O1V-9m-Odb" secondAttribute="bottom" constant="150" id="xSk-bU-Kmb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bwa-HH-W7S"/>
+                    <connections>
+                        <outlet property="detailTextField" destination="O1V-9m-Odb" id="dWR-FL-3QF"/>
+                        <outlet property="reviewTextField" destination="FWa-hT-5F9" id="F6r-A3-aQ2"/>
+                        <outlet property="submitButton" destination="vt9-rJ-sov" id="uN8-a8-qNe"/>
+                        <outlet property="titleTextField" destination="GX7-Xl-Mtb" id="ezX-XA-ELG"/>
+                        <outlet property="uiLabel" destination="L10-7v-pSd" id="eBx-iN-m6H"/>
+                        <outlet property="urlTextField" destination="SUm-Gq-wg9" id="gSe-nV-L2m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUy-75-sD3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11004" y="785"/>
+            <point key="canvasLocation" x="11003.816793893129" y="784.50704225352115"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="cKt-PF-Mxf">
@@ -650,6 +733,9 @@
         <namedColor name="Main">
             <color red="0.81599998474121094" green="0.33700001239776611" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
