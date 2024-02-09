@@ -14,6 +14,9 @@ class FirstViewController: UIViewController {
     // API通信を行うためのクライアント
     let apiClient: BookAPIClientProtocol = BookAPIClient()
     
+    // インジケータ
+    private var activityIndicator: UIActivityIndicatorView!
+    
     // TableViewとボタンのアウトレット（UI部品との接続）
     @IBOutlet weak var tableView: UITableView!
     fileprivate let refreshCtl = UIRefreshControl()
@@ -52,24 +55,30 @@ class FirstViewController: UIViewController {
     // ビューがロードされたときに呼ばれるメソッド
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchBooks()
-        
+        // アクティビティインジケータの設定
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        // 初期状態では非表示にしておく
+        activityIndicator.isHidden = true
         // TableViewにリフレッシュコントロールを追加
         tableView.refreshControl = refreshCtl
         refreshCtl.addTarget(self, action: #selector(fetchBooks), for: .valueChanged)
+        // 本の情報を取得
+        fetchBooks()
         
     }
     
     // 書籍データを取得するメソッド
     @objc private func fetchBooks() {
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.center = self.view.center
-        self.view.addSubview(activityIndicator)
+        // インジケータを表示
+        activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         apiClient.fetchBooks(offset: 0) { [weak self] books in
             DispatchQueue.main.async {
-                activityIndicator.stopAnimating()
-                activityIndicator.removeFromSuperview() // アニメーション停止後にインジケータをビューから削除
+                // インジケータを非表示
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
                 guard let books = books else { return }
                 print("Fetched Books")
                 self?.books = books
@@ -83,9 +92,17 @@ class FirstViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SecondViewController" {
             if let secondVC = segue.destination as? SecondViewController,
-               let indexPath = tableView.indexPathForSelectedRow,
-               let book = books?[indexPath.row] {
+               let book = sender as? Book {
                 secondVC.url = book.url
+            }
+        } else if segue.identifier == "showReviewEditViewController" {
+            if let editVC = segue.destination as? ReviewEditViewController,
+               let book = sender as? Book {
+                editVC.bookId = book.id
+                editVC.bookTitle = book.title
+                editVC.bookURL = book.url
+                editVC.bookDetail = book.detail
+                editVC.bookReview = book.review
             }
         }
     }
@@ -121,6 +138,15 @@ extension FirstViewController: UITableViewDataSource {
 // UITableViewDelegateプロトコルに適合するための拡張
 extension FirstViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "SecondViewController", sender: self)
+        guard let book = books?[indexPath.row] else { return }
+        
+        // レビューを自分が投稿したか
+        if book.isMine == true {
+            // isMineがtrueの場合，編集画面へ
+            performSegue(withIdentifier: "showReviewEditViewController", sender: book)
+        } else {
+            // isMineがfalse場合、書籍レビュー詳細画面へ
+            performSegue(withIdentifier: "SecondViewController", sender: book)
+        }
     }
 }

@@ -300,6 +300,7 @@
                         <segue destination="KoY-3c-kqp" kind="show" identifier="showUserInformationViewController" id="zWv-9r-JD5"/>
                         <segue destination="SRy-8h-NOw" kind="presentation" identifier="showInitialViewController" modalPresentationStyle="fullScreen" id="V3V-3U-AhI"/>
                         <segue destination="CiT-Uy-fgu" kind="show" identifier="showReviewSubmissionViewController" id="nsk-8U-J73"/>
+                        <segue destination="9EB-pd-cry" kind="show" identifier="showReviewEditViewController" id="UfG-qI-ecb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -416,7 +417,7 @@
                                     <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="submitButtonTapped:" destination="CiT-Uy-fgu" eventType="touchUpInside" id="EBT-Cv-hLW"/>
+                                    <action selector="submitButtonTapped:" destination="CiT-Uy-fgu" eventType="touchUpInside" id="oEh-RR-G65"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Detail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1V-9m-Odb">
@@ -458,17 +459,107 @@
                     </view>
                     <navigationItem key="navigationItem" id="bwa-HH-W7S"/>
                     <connections>
-                        <outlet property="detailTextField" destination="O1V-9m-Odb" id="dWR-FL-3QF"/>
-                        <outlet property="reviewTextField" destination="FWa-hT-5F9" id="F6r-A3-aQ2"/>
-                        <outlet property="submitButton" destination="vt9-rJ-sov" id="uN8-a8-qNe"/>
-                        <outlet property="titleTextField" destination="GX7-Xl-Mtb" id="ezX-XA-ELG"/>
-                        <outlet property="uiLabel" destination="L10-7v-pSd" id="eBx-iN-m6H"/>
-                        <outlet property="urlTextField" destination="SUm-Gq-wg9" id="gSe-nV-L2m"/>
+                        <outlet property="detailTextField" destination="O1V-9m-Odb" id="jhA-wz-1aD"/>
+                        <outlet property="reviewTextField" destination="FWa-hT-5F9" id="U1Q-sO-dlW"/>
+                        <outlet property="submitButton" destination="vt9-rJ-sov" id="3iZ-km-qNE"/>
+                        <outlet property="titleTextField" destination="GX7-Xl-Mtb" id="epf-U1-yaF"/>
+                        <outlet property="uiLabel" destination="L10-7v-pSd" id="lSB-9S-ZYA"/>
+                        <outlet property="urlTextField" destination="SUm-Gq-wg9" id="Ung-vE-Jhe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUy-75-sD3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="11003.816793893129" y="784.50704225352115"/>
+        </scene>
+        <!--ReviewEditViewController-->
+        <scene sceneID="ydP-ni-Hds">
+            <objects>
+                <viewController storyboardIdentifier="ReviewEditViewController" title="ReviewEditViewController" id="9EB-pd-cry" customClass="ReviewEditViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MXH-5Z-RKm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLV-fE-VaT">
+                                <rect key="frame" x="50" y="641" width="293" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="9EB-pd-cry" eventType="touchUpInside" id="Nwl-G6-nnW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gZ-i1-HfO">
+                                <rect key="frame" x="50" y="706" width="293" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete">
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06E-6I-Gwy">
+                                <rect key="frame" x="50" y="94" width="293" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wf5-Ky-a6V">
+                                <rect key="frame" x="50" y="145" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vd6-X4-tWe">
+                                <rect key="frame" x="50" y="209" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Detail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-A1-xdY">
+                                <rect key="frame" x="50" y="273" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Review" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amL-vF-dGw">
+                                <rect key="frame" x="50" y="457" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s3K-Sg-3ps"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s3K-Sg-3ps" firstAttribute="trailing" secondItem="amL-vF-dGw" secondAttribute="trailing" constant="50" id="1sO-T0-rEI"/>
+                            <constraint firstItem="vd6-X4-tWe" firstAttribute="leading" secondItem="s3K-Sg-3ps" secondAttribute="leading" constant="50" id="9rP-HA-ZmO"/>
+                            <constraint firstItem="s3K-Sg-3ps" firstAttribute="trailing" secondItem="YHe-A1-xdY" secondAttribute="trailing" constant="50" id="AbY-kS-01B"/>
+                            <constraint firstItem="06E-6I-Gwy" firstAttribute="top" secondItem="s3K-Sg-3ps" secondAttribute="top" constant="50" id="ApF-nq-bL1"/>
+                            <constraint firstItem="8gZ-i1-HfO" firstAttribute="leading" secondItem="s3K-Sg-3ps" secondAttribute="leading" constant="50" id="CmD-ru-GaT"/>
+                            <constraint firstItem="06E-6I-Gwy" firstAttribute="leading" secondItem="s3K-Sg-3ps" secondAttribute="leading" constant="50" id="FIv-Q1-vXB"/>
+                            <constraint firstItem="WLV-fE-VaT" firstAttribute="top" secondItem="amL-vF-dGw" secondAttribute="bottom" constant="150" id="FMU-QN-MAf"/>
+                            <constraint firstItem="s3K-Sg-3ps" firstAttribute="trailing" secondItem="WLV-fE-VaT" secondAttribute="trailing" constant="50" id="GUF-dy-ny8"/>
+                            <constraint firstItem="8gZ-i1-HfO" firstAttribute="top" secondItem="WLV-fE-VaT" secondAttribute="bottom" constant="30" id="IwX-br-xWk"/>
+                            <constraint firstItem="amL-vF-dGw" firstAttribute="top" secondItem="YHe-A1-xdY" secondAttribute="bottom" constant="150" id="JIw-JJ-wQo"/>
+                            <constraint firstItem="s3K-Sg-3ps" firstAttribute="trailing" secondItem="wf5-Ky-a6V" secondAttribute="trailing" constant="50" id="QCg-P1-VnN"/>
+                            <constraint firstItem="vd6-X4-tWe" firstAttribute="top" secondItem="wf5-Ky-a6V" secondAttribute="bottom" constant="30" id="T0w-Ih-HMs"/>
+                            <constraint firstItem="s3K-Sg-3ps" firstAttribute="trailing" secondItem="06E-6I-Gwy" secondAttribute="trailing" constant="50" id="Tot-WE-AYS"/>
+                            <constraint firstItem="YHe-A1-xdY" firstAttribute="leading" secondItem="s3K-Sg-3ps" secondAttribute="leading" constant="50" id="Tv2-gx-N3m"/>
+                            <constraint firstItem="YHe-A1-xdY" firstAttribute="top" secondItem="vd6-X4-tWe" secondAttribute="bottom" constant="30" id="eOv-Pw-mnz"/>
+                            <constraint firstItem="s3K-Sg-3ps" firstAttribute="trailing" secondItem="8gZ-i1-HfO" secondAttribute="trailing" constant="50" id="iLL-Fu-BgU"/>
+                            <constraint firstItem="wf5-Ky-a6V" firstAttribute="top" secondItem="06E-6I-Gwy" secondAttribute="bottom" constant="30" id="jIu-3c-RAr"/>
+                            <constraint firstItem="s3K-Sg-3ps" firstAttribute="trailing" secondItem="vd6-X4-tWe" secondAttribute="trailing" constant="50" id="kGE-DR-v1o"/>
+                            <constraint firstItem="WLV-fE-VaT" firstAttribute="leading" secondItem="s3K-Sg-3ps" secondAttribute="leading" constant="50" id="nfR-p9-tjK"/>
+                            <constraint firstItem="wf5-Ky-a6V" firstAttribute="leading" secondItem="s3K-Sg-3ps" secondAttribute="leading" constant="50" id="oVu-k2-HaM"/>
+                            <constraint firstItem="amL-vF-dGw" firstAttribute="leading" secondItem="s3K-Sg-3ps" secondAttribute="leading" constant="50" id="xYk-ix-vc1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qtj-bl-ARr"/>
+                    <connections>
+                        <outlet property="detailTextField" destination="YHe-A1-xdY" id="9xo-cW-EGU"/>
+                        <outlet property="editButton" destination="WLV-fE-VaT" id="KE6-Kj-drI"/>
+                        <outlet property="reviewTextField" destination="amL-vF-dGw" id="wzL-h8-h3x"/>
+                        <outlet property="titleTextField" destination="wf5-Ky-a6V" id="Clb-oE-SSL"/>
+                        <outlet property="uiLabel" destination="06E-6I-Gwy" id="IUS-Rr-JO6"/>
+                        <outlet property="urlTextField" destination="vd6-X4-tWe" id="Q6k-2N-L77"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4de-eH-kr5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11004" y="1455"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="cKt-PF-Mxf">

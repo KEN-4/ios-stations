@@ -32,6 +32,7 @@
 		C0A5B01D2B3846DC00A81C46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0A5B01F2B3846DC00A81C46 /* InfoPlist.strings */; };
 		C0A5B0222B428C1B00A81C46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0A5B0212B428C1B00A81C46 /* Alamofire */; };
 		E79BC9ED2B71FD1E004E1923 /* ReviewSubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */; };
+		E7C109082B7630B300063412 /* ReviewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C109072B7630B300063412 /* ReviewEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		C07F9F672B5553A400E068B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0A5B01E2B3846DC00A81C46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSubmissionViewController.swift; sourceTree = "<group>"; };
+		E7C109072B7630B300063412 /* ReviewEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				C07AFC6B2B5F488700C7567D /* InitialViewController.swift */,
 				C07AFC6D2B62314A00C7567D /* UserInformationViewController.swift */,
 				E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */,
+				E7C109072B7630B300063412 /* ReviewEditViewController.swift */,
 			);
 			path = "ios-stations";
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C109082B7630B300063412 /* ReviewEditViewController.swift in Sources */,
 				BE71314A268B4CA400E3EAB8 /* BookCell.swift in Sources */,
 				C07AFC6C2B5F488700C7567D /* InitialViewController.swift in Sources */,
 				BE665EDE2678EA44006F4F2C /* SecondViewController.swift in Sources */,

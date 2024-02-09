@@ -33,8 +33,7 @@ extension String {
     }
 
     func isURL() -> Bool {
-        let pattern = "^.{3,}$"
-        // let pattern = "^(http|https)://[\\w\\.\\-_]+\\.[\\w\\.\\-_]+.*$"
+         let pattern = "^(http|https)://[\\w\\.\\-_]+\\.[\\w\\.\\-_]+.*$"
         let matches = validate(str: self, pattern: pattern)
         return matches.count > 0
     }

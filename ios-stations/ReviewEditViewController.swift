@@ -2,13 +2,20 @@ import UIKit
 import Alamofire
 import KeychainAccess
 
-class ReviewSubmissionViewController: UIViewController, UITextFieldDelegate {
+class ReviewEditViewController: UIViewController, UITextFieldDelegate {
+    
+    var bookId: String?
+    var bookTitle: String?
+    var bookURL: String?
+    var bookDetail: String?
+    var bookReview: String?
+    
     @IBOutlet weak var uiLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var detailTextField: UITextField!
     @IBOutlet weak var reviewTextField: UITextField!
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,17 +24,23 @@ class ReviewSubmissionViewController: UIViewController, UITextFieldDelegate {
         detailTextField.delegate = self
         reviewTextField.delegate = self
         
-        updateSubmitButtonState()
+        // テキストフィールドに渡された情報を設定
+        titleTextField.text = bookTitle
+        urlTextField.text = bookURL
+        detailTextField.text = bookDetail
+        reviewTextField.text = bookReview
+        
+        updateEditButtonState()
     }
     
     //textFieldにテキストが入力されたり変更されたりするときに呼ばれるdelegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // ボタンの状態を更新
-        updateSubmitButtonState()
+        updateEditButtonState()
         return true
     }
     
-    func updateSubmitButtonState() {
+    func updateEditButtonState() {
         // 全てのTextFieldに入力があるか確認
         // textがnillの場合,trueを返す→!で反転するからfalseを返す
         let isTitleEntered = !(titleTextField.text?.isEmpty ?? true)
@@ -35,10 +48,10 @@ class ReviewSubmissionViewController: UIViewController, UITextFieldDelegate {
         let isDetailEntered = !(detailTextField.text?.isEmpty ?? true)
         let isReviewEntered = !(reviewTextField.text?.isEmpty ?? true)
         // ボタンの有効/無効を切り替え
-        submitButton.isEnabled = isTitleEntered && isUrlEntered && isDetailEntered && isReviewEntered
+        editButton.isEnabled = isTitleEntered && isUrlEntered && isDetailEntered && isReviewEntered
     }
     
-    @IBAction func submitButtonTapped(_ sender: Any) {
+    @IBAction func editButtonTapped(_ sender: Any) {
         guard let name = titleTextField.text, name.isTitle() else {
             self.uiLabel.text = "タイトルは3文字以上で入力してください"
             return
@@ -55,10 +68,10 @@ class ReviewSubmissionViewController: UIViewController, UITextFieldDelegate {
             self.uiLabel.text = "レビューは3文字以上で入力してください"
             return
         }
-        submitReview()
+        editReview()
     }
     
-    private func submitReview() {
+    private func editReview() {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
         guard let token = keychain[TokenKey.token] else {
             print("認証トークンがありません")
@@ -73,7 +86,7 @@ class ReviewSubmissionViewController: UIViewController, UITextFieldDelegate {
             "review": reviewTextField.text!
         ]
         
-        AF.request("https://railway.bookreview.techtrain.dev/books", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
+        AF.request("https://railway.bookreview.techtrain.dev/books", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
             switch response.result {
             case .success(_):
                 print("レビュー投稿に成功しました")
