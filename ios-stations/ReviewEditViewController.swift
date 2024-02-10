@@ -16,6 +16,7 @@ class ReviewEditViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var detailTextField: UITextField!
     @IBOutlet weak var reviewTextField: UITextField!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +74,10 @@ class ReviewEditViewController: UIViewController, UITextFieldDelegate {
     
     private func editReview() {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
+        guard let bookId = self.bookId else {
+            print("bookIdがありません")
+            return
+        }
         guard let token = keychain[TokenKey.token] else {
             print("認証トークンがありません")
             return
@@ -86,17 +91,46 @@ class ReviewEditViewController: UIViewController, UITextFieldDelegate {
             "review": reviewTextField.text!
         ]
         
-        AF.request("https://railway.bookreview.techtrain.dev/books", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
+        AF.request("https://railway.bookreview.techtrain.dev/books/\(bookId)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in
             switch response.result {
             case .success(_):
-                print("レビュー投稿に成功しました")
+                print("レビュー更新に成功しました")
                 DispatchQueue.main.async {
-                    self.uiLabel.text = "レビュー投稿に成功しました"
+                    self.uiLabel.text = "レビュー更新に成功しました"
                 }
             case .failure(let error):
-                print("レビュー投稿に失敗しました: \(error)")
+                print("レビュー更新に失敗しました: \(error)")
                 DispatchQueue.main.async {
-                    self.uiLabel.text = "レビュー投稿に失敗しました"
+                    self.uiLabel.text = "レビュー更新に失敗しました"
+                }
+            }
+        }
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
+        guard let bookId = self.bookId else {
+            print("bookIdがありません")
+            return
+        }
+        guard let token = keychain[TokenKey.token] else {
+            print("認証トークンがありません")
+            return
+        }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        let url = "https://railway.bookreview.techtrain.dev/books/\(bookId)"
+        
+        AF.request(url, method: .delete, headers: headers).response { response in
+            switch response.result {
+            case .success(_):
+                print("書籍削除に成功しました")
+                DispatchQueue.main.async {
+                    self.uiLabel.text = "書籍削除に成功しました"
+                }
+            case .failure(let error):
+                print("書籍削除に失敗しました: \(error)")
+                DispatchQueue.main.async {
+                    self.uiLabel.text = "書籍削除に失敗しました"
                 }
             }
         }

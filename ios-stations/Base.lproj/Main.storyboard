@@ -459,6 +459,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bwa-HH-W7S"/>
                     <connections>
+                        <outlet property="bottomConsraint" destination="uz5-CE-rRQ" id="ATD-li-0Hg"/>
                         <outlet property="detailTextField" destination="O1V-9m-Odb" id="jhA-wz-1aD"/>
                         <outlet property="reviewTextField" destination="FWa-hT-5F9" id="U1Q-sO-dlW"/>
                         <outlet property="submitButton" destination="vt9-rJ-sov" id="3iZ-km-qNE"/>
@@ -493,6 +494,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Delete">
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="9EB-pd-cry" eventType="touchUpInside" id="IOS-u7-Wqc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06E-6I-Gwy">
                                 <rect key="frame" x="50" y="94" width="293" height="21"/>
@@ -549,6 +553,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Qtj-bl-ARr"/>
                     <connections>
+                        <outlet property="deleteButton" destination="8gZ-i1-HfO" id="6og-8r-P8E"/>
                         <outlet property="detailTextField" destination="YHe-A1-xdY" id="9xo-cW-EGU"/>
                         <outlet property="editButton" destination="WLV-fE-VaT" id="KE6-Kj-drI"/>
                         <outlet property="reviewTextField" destination="amL-vF-dGw" id="wzL-h8-h3x"/>

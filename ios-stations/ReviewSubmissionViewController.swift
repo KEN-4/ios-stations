@@ -38,27 +38,32 @@ class ReviewSubmissionViewController: UIViewController, UITextFieldDelegate {
         submitButton.isEnabled = isTitleEntered && isUrlEntered && isDetailEntered && isReviewEntered
     }
     
+//    @IBOutlet weak var bottomConsraint: NSLayoutConstraint!
+    
     @IBAction func submitButtonTapped(_ sender: Any) {
-        guard let name = titleTextField.text, name.isTitle() else {
+        guard let title = titleTextField.text, title.isTitle() else {
             self.uiLabel.text = "タイトルは3文字以上で入力してください"
             return
         }
-        guard let name = urlTextField.text, name.isURL() else {
+//        bottomConsraint.constant = 10
+        
+        guard let url = urlTextField.text, url.isURL() else {
             self.uiLabel.text = "有効なURLを入力してください"
             return
         }
-        guard let name = detailTextField.text, name.isDetail() else {
+        guard let detail = detailTextField.text, detail.isDetail() else {
             self.uiLabel.text = "詳細情報は3文字以上で入力してください"
             return
         }
-        guard let name = reviewTextField.text, name.isReview() else {
+        guard let review = reviewTextField.text, review.isReview() else {
             self.uiLabel.text = "レビューは3文字以上で入力してください"
             return
         }
-        submitReview()
+        submitReview(title: title, url: url, detail: detail, review: review)
     }
     
-    private func submitReview() {
+    // ここでバリデーション済みの引数を指定する
+    private func submitReview(title: String, url: String, detail: String, review: String) {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
         guard let token = keychain[TokenKey.token] else {
             print("認証トークンがありません")
