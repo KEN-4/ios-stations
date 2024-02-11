@@ -12,6 +12,14 @@ class ReviewSubmissionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Network.shared.isOnline() {
+            // オンライン時の処理
+        } else {
+            // オフライン時の処理
+            let alert = UIAlertController(title: "オフラインです", message: "インターネット接続が必要です。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
         titleTextField.delegate = self
         urlTextField.delegate = self
         detailTextField.delegate = self
@@ -72,10 +80,10 @@ class ReviewSubmissionViewController: UIViewController, UITextFieldDelegate {
         
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let parameters: Parameters = [
-            "title": titleTextField.text!,
-            "url": urlTextField.text!,
-            "detail": detailTextField.text!,
-            "review": reviewTextField.text!
+            "title": title,
+            "url": url,
+            "detail": detail,
+            "review": review
         ]
         
         AF.request("https://railway.bookreview.techtrain.dev/books", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in

@@ -20,6 +20,14 @@ class ReviewEditViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Network.shared.isOnline() {
+            // オンライン時の処理
+        } else {
+            // オフライン時の処理
+            let alert = UIAlertController(title: "オフラインです", message: "インターネット接続が必要です。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
         titleTextField.delegate = self
         urlTextField.delegate = self
         detailTextField.delegate = self
@@ -53,26 +61,26 @@ class ReviewEditViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {
-        guard let name = titleTextField.text, name.isTitle() else {
+        guard let title = titleTextField.text, title.isTitle() else {
             self.uiLabel.text = "タイトルは3文字以上で入力してください"
             return
         }
-        guard let name = urlTextField.text, name.isURL() else {
+        guard let url = urlTextField.text, url.isURL() else {
             self.uiLabel.text = "有効なURLを入力してください"
             return
         }
-        guard let name = detailTextField.text, name.isDetail() else {
+        guard let detail = detailTextField.text, detail.isDetail() else {
             self.uiLabel.text = "詳細情報は3文字以上で入力してください"
             return
         }
-        guard let name = reviewTextField.text, name.isReview() else {
+        guard let review = reviewTextField.text, review.isReview() else {
             self.uiLabel.text = "レビューは3文字以上で入力してください"
             return
         }
-        editReview()
+        editReview(title: title, url: url, detail: detail, review: review)
     }
     
-    private func editReview() {
+    private func editReview(title: String, url: String, detail: String, review: String) {
         let keychain = Keychain(service: "jp.co.techbowl.ios-stations-user")
         guard let bookId = self.bookId else {
             print("bookIdがありません")
@@ -85,10 +93,10 @@ class ReviewEditViewController: UIViewController, UITextFieldDelegate {
         
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let parameters: Parameters = [
-            "title": titleTextField.text!,
-            "url": urlTextField.text!,
-            "detail": detailTextField.text!,
-            "review": reviewTextField.text!
+            "title": title,
+            "url": url,
+            "detail": detail,
+            "review": review
         ]
         
         AF.request("https://railway.bookreview.techtrain.dev/books/\(bookId)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response { response in

@@ -459,7 +459,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="bwa-HH-W7S"/>
                     <connections>
-                        <outlet property="bottomConsraint" destination="uz5-CE-rRQ" id="ATD-li-0Hg"/>
                         <outlet property="detailTextField" destination="O1V-9m-Odb" id="jhA-wz-1aD"/>
                         <outlet property="reviewTextField" destination="FWa-hT-5F9" id="U1Q-sO-dlW"/>
                         <outlet property="submitButton" destination="vt9-rJ-sov" id="3iZ-km-qNE"/>

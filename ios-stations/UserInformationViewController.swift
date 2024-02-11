@@ -12,6 +12,14 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Network.shared.isOnline() {
+            // オンライン時の処理
+        } else {
+            // オフライン時の処理
+            let alert = UIAlertController(title: "オフラインです", message: "インターネット接続が必要です。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
         newUserNameTextField.delegate = self
         updateChangeUserInformationButtonState()
         fetchUserProfile()

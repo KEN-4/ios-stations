@@ -20,11 +20,24 @@ class SecondViewController: UIViewController {
     // ビューがロードされた後に呼び出されるメソッド
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Network.shared.isOnline() {
+            // オンライン時の処理
+//            let alert = UIAlertController(title: "オンラインです", message: "インターネット接続しています。", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default))
+//            self.present(alert, animated: true)
+        } else {
+            // オフライン時の処理
+            let alert = UIAlertController(title: "オフラインです", message: "インターネット接続が必要です。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
         
         // WKWebViewを作成し、ビューコントローラのビューとして設定
         webView = WKWebView(frame: view.bounds, configuration: WKWebViewConfiguration())
-        webView.navigationDelegate = self // navigationDelegateを設定
-        view.addSubview(webView) // webViewをviewに追加
+        // navigationDelegateを設定
+        webView.navigationDelegate = self
+        // webViewをviewに追加
+        view.addSubview(webView)
         
         // アクティビティインジケータを設定
         activityIndicatorView = UIActivityIndicatorView(style: .large)
@@ -39,13 +52,6 @@ class SecondViewController: UIViewController {
     private func load(withURL urlString: String) {
         guard let url = URL(string: urlString) else { return }
         let request = URLRequest(url: url)
-        
-        
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.center = self.view.center
-        self.view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        
         webView.load(request)
     }
 }

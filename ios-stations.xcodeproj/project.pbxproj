@@ -33,6 +33,7 @@
 		C0A5B0222B428C1B00A81C46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0A5B0212B428C1B00A81C46 /* Alamofire */; };
 		E79BC9ED2B71FD1E004E1923 /* ReviewSubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */; };
 		E7C109082B7630B300063412 /* ReviewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C109072B7630B300063412 /* ReviewEditViewController.swift */; };
+		E7C920592B7793B100C3DCDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C920582B7793B100C3DCDD /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		C0A5B01E2B3846DC00A81C46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSubmissionViewController.swift; sourceTree = "<group>"; };
 		E7C109072B7630B300063412 /* ReviewEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEditViewController.swift; sourceTree = "<group>"; };
+		E7C920582B7793B100C3DCDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				C07AFC6D2B62314A00C7567D /* UserInformationViewController.swift */,
 				E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */,
 				E7C109072B7630B300063412 /* ReviewEditViewController.swift */,
+				E7C920582B7793B100C3DCDD /* Network.swift */,
 			);
 			path = "ios-stations";
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				BE245145266FBEE00038AD81 /* FirstViewController.swift in Sources */,
 				BE7131392685ED7600E3EAB8 /* BookAPIClient.swift in Sources */,
 				C07AFC6E2B62314A00C7567D /* UserInformationViewController.swift in Sources */,
+				E7C920592B7793B100C3DCDD /* Network.swift in Sources */,
 				BE245141266FBEE00038AD81 /* AppDelegate.swift in Sources */,
 				E79BC9ED2B71FD1E004E1923 /* ReviewSubmissionViewController.swift in Sources */,
 				BE7131372685ED0F00E3EAB8 /* Book.swift in Sources */,
