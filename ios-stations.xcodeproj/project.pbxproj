@@ -34,6 +34,7 @@
 		E79BC9ED2B71FD1E004E1923 /* ReviewSubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */; };
 		E7C109082B7630B300063412 /* ReviewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C109072B7630B300063412 /* ReviewEditViewController.swift */; };
 		E7C920592B7793B100C3DCDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C920582B7793B100C3DCDD /* Network.swift */; };
+		E7C9205B2B78C77400C3DCDD /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C9205A2B78C77400C3DCDD /* ReviewDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSubmissionViewController.swift; sourceTree = "<group>"; };
 		E7C109072B7630B300063412 /* ReviewEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEditViewController.swift; sourceTree = "<group>"; };
 		E7C920582B7793B100C3DCDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E7C9205A2B78C77400C3DCDD /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				E79BC9EC2B71FD1E004E1923 /* ReviewSubmissionViewController.swift */,
 				E7C109072B7630B300063412 /* ReviewEditViewController.swift */,
 				E7C920582B7793B100C3DCDD /* Network.swift */,
+				E7C9205A2B78C77400C3DCDD /* ReviewDetailViewController.swift */,
 			);
 			path = "ios-stations";
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				BE665EDE2678EA44006F4F2C /* SecondViewController.swift in Sources */,
 				C07F9F642B5551CB00E068B4 /* SignupViewController.swift in Sources */,
 				BE713148268B3CF000E3EAB8 /* UIColor+Theme.swift in Sources */,
+				E7C9205B2B78C77400C3DCDD /* ReviewDetailViewController.swift in Sources */,
 				C07F9F622B53C2FC00E068B4 /* ViewController.swift in Sources */,
 				BE245145266FBEE00038AD81 /* FirstViewController.swift in Sources */,
 				BE7131392685ED7600E3EAB8 /* BookAPIClient.swift in Sources */,
@@ -551,6 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86D43JTR94;
 				INFOPLIST_FILE = "ios-stations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -569,6 +574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86D43JTR94;
 				INFOPLIST_FILE = "ios-stations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

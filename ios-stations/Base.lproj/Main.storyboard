@@ -296,11 +296,11 @@
                         <outlet property="submissionButton" destination="dEK-Xn-8Go" id="lof-C9-bh9"/>
                         <outlet property="tableView" destination="0fZ-Gu-KhZ" id="P3x-Xr-8Wr"/>
                         <outlet property="tapUserInfromation" destination="YGx-Zk-rOh" id="36s-3e-fWw"/>
-                        <segue destination="MlH-4i-GFg" kind="show" identifier="SecondViewController" id="Dzx-x0-K9N"/>
                         <segue destination="KoY-3c-kqp" kind="show" identifier="showUserInformationViewController" id="zWv-9r-JD5"/>
                         <segue destination="SRy-8h-NOw" kind="presentation" identifier="showInitialViewController" modalPresentationStyle="fullScreen" id="V3V-3U-AhI"/>
                         <segue destination="CiT-Uy-fgu" kind="show" identifier="showReviewSubmissionViewController" id="nsk-8U-J73"/>
                         <segue destination="9EB-pd-cry" kind="show" identifier="showReviewEditViewController" id="UfG-qI-ecb"/>
+                        <segue destination="jHb-fI-A8Z" kind="show" identifier="showReviewDetailViewController" id="ots-Qx-eg3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -565,10 +565,82 @@
             </objects>
             <point key="canvasLocation" x="11004" y="1455"/>
         </scene>
+        <!--Review Detail View Controller-->
+        <scene sceneID="3C8-OK-twI">
+            <objects>
+                <viewController storyboardIdentifier="ReviewDetailViewController" id="jHb-fI-A8Z" customClass="ReviewDetailViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ln4-qr-nHy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXH-CM-Bgs">
+                                <rect key="frame" x="50" y="144" width="293" height="22.666666666666657"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detailLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-JA-TeW">
+                                <rect key="frame" x="50" y="196.66666666666663" width="293" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="7Kw-fl-NeT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reviewlLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zB-LD-4GJ">
+                                <rect key="frame" x="50" y="376.66666666666669" width="293" height="150.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="p7a-fL-F3l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gQ-fP-HWQ">
+                                <rect key="frame" x="50" y="646.66666666666663" width="293" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Jump Url">
+                                    <backgroundConfiguration key="background"/>
+                                    <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="MlH-4i-GFg" kind="show" identifier="showSecondViewController" id="S1q-ps-bB3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LYW-i8-Dvh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3zB-LD-4GJ" firstAttribute="top" secondItem="D1b-JA-TeW" secondAttribute="bottom" constant="30" id="4Ui-A8-HKo"/>
+                            <constraint firstItem="D1b-JA-TeW" firstAttribute="top" secondItem="QXH-CM-Bgs" secondAttribute="bottom" constant="30" id="5Uz-Uh-buK"/>
+                            <constraint firstItem="3zB-LD-4GJ" firstAttribute="leading" secondItem="LYW-i8-Dvh" secondAttribute="leading" constant="50" id="5X1-QZ-dPF"/>
+                            <constraint firstItem="D1b-JA-TeW" firstAttribute="leading" secondItem="LYW-i8-Dvh" secondAttribute="leading" constant="50" id="7Dd-bX-j2I"/>
+                            <constraint firstItem="1gQ-fP-HWQ" firstAttribute="leading" secondItem="LYW-i8-Dvh" secondAttribute="leading" constant="50" id="9Mu-SE-YSq"/>
+                            <constraint firstItem="QXH-CM-Bgs" firstAttribute="top" secondItem="LYW-i8-Dvh" secondAttribute="top" constant="100" id="DY6-EK-cpz"/>
+                            <constraint firstItem="LYW-i8-Dvh" firstAttribute="trailing" secondItem="QXH-CM-Bgs" secondAttribute="trailing" constant="50" id="HbH-xR-ClQ"/>
+                            <constraint firstItem="LYW-i8-Dvh" firstAttribute="trailing" secondItem="D1b-JA-TeW" secondAttribute="trailing" constant="50" id="Kbr-wM-9QQ"/>
+                            <constraint firstItem="LYW-i8-Dvh" firstAttribute="trailing" secondItem="3zB-LD-4GJ" secondAttribute="trailing" constant="50" id="Mnq-tS-LT0"/>
+                            <constraint firstItem="LYW-i8-Dvh" firstAttribute="trailing" secondItem="1gQ-fP-HWQ" secondAttribute="trailing" constant="50" id="ZmK-4J-16y"/>
+                            <constraint firstItem="1gQ-fP-HWQ" firstAttribute="top" secondItem="3zB-LD-4GJ" secondAttribute="bottom" constant="120" id="bOh-6U-hzw"/>
+                            <constraint firstItem="QXH-CM-Bgs" firstAttribute="leading" secondItem="LYW-i8-Dvh" secondAttribute="leading" constant="50" id="qHi-kK-8eW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ayF-J4-5Sb"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="D1b-JA-TeW" id="ihn-Pb-P3G"/>
+                        <outlet property="reviewLabel" destination="3zB-LD-4GJ" id="QVS-wl-f5r"/>
+                        <outlet property="titleLabel" destination="QXH-CM-Bgs" id="NKi-jw-ZqY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRL-n7-g17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11003.816793893129" y="-604.22535211267609"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="cKt-PF-Mxf">
             <objects>
-                <viewController id="MlH-4i-GFg" customClass="SecondViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="MlH-4i-GFg" customClass="SecondViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ml-Nc-6ph">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -579,7 +651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikU-Uk-ea2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11004" y="-682"/>
+            <point key="canvasLocation" x="11963" y="-604"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oQA-59-ywF">
@@ -829,6 +901,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -72,8 +72,6 @@ class FirstViewController: UIViewController {
         // TableViewにリフレッシュコントロールを追加
         tableView.refreshControl = refreshCtl
         refreshCtl.addTarget(self, action: #selector(fetchBooks), for: .valueChanged)
-        // 本の情報を取得
-        fetchBooks()
         
     }
     
@@ -98,10 +96,14 @@ class FirstViewController: UIViewController {
     
     // Segueの準備を行うメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SecondViewController" {
-            if let secondVC = segue.destination as? SecondViewController,
+        if segue.identifier == "showReviewDetailViewController" {
+            if let reviewDetailVC = segue.destination as? ReviewDetailViewController,
                let book = sender as? Book {
-                secondVC.url = book.url
+                reviewDetailVC.bookId = book.id
+                reviewDetailVC.bookTitle = book.title
+                reviewDetailVC.bookURL = book.url
+                reviewDetailVC.bookDetail = book.detail
+                reviewDetailVC.bookReview = book.review
             }
         } else if segue.identifier == "showReviewEditViewController" {
             if let editVC = segue.destination as? ReviewEditViewController,
@@ -117,6 +119,7 @@ class FirstViewController: UIViewController {
     
     // ビューが表示される直前の動作を定義
     override func viewWillAppear(_ animated: Bool) {
+        fetchBooks()
         if let indexPath = tableView.indexPathForSelectedRow{
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -154,7 +157,7 @@ extension FirstViewController: UITableViewDelegate {
             performSegue(withIdentifier: "showReviewEditViewController", sender: book)
         } else {
             // isMineがfalse場合、書籍レビュー詳細画面へ
-            performSegue(withIdentifier: "SecondViewController", sender: book)
+            performSegue(withIdentifier: "showReviewDetailViewController", sender: book)
         }
     }
 }
