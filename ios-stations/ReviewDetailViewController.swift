@@ -34,8 +34,8 @@ class ReviewDetailViewController: UIViewController, UITextFieldDelegate {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSecondViewController" {
-            if let secondVC = segue.destination as? SecondViewController {
+        if segue.identifier == "showDetailUrlViewController" {
+            if let secondVC = segue.destination as? DetailUrlViewController {
                 secondVC.url = self.bookURL // ここでURLを渡します
             }
         }

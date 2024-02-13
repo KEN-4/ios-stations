@@ -605,7 +605,7 @@
                                     <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="MlH-4i-GFg" kind="show" identifier="showSecondViewController" id="S1q-ps-bB3"/>
+                                    <segue destination="MlH-4i-GFg" kind="show" identifier="showDetailUrlViewController" id="S1q-ps-bB3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -637,10 +637,10 @@
             </objects>
             <point key="canvasLocation" x="11003.816793893129" y="-604.22535211267609"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Detail Url View Controller-->
         <scene sceneID="cKt-PF-Mxf">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="MlH-4i-GFg" customClass="SecondViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="MlH-4i-GFg" customClass="DetailUrlViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ml-Nc-6ph">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

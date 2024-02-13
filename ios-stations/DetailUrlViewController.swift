@@ -1,12 +1,7 @@
-//
-//  SecondViewController.swift
-//  ios-stations
-//
-
 import UIKit
 import WebKit
 
-class SecondViewController: UIViewController {
+class DetailUrlViewController: UIViewController {
 
     private var webView: WKWebView!
     private var activityIndicatorView: UIActivityIndicatorView!
@@ -53,7 +48,7 @@ class SecondViewController: UIViewController {
 }
 
 // WKNavigationDelegateメソッド
-extension SecondViewController: WKNavigationDelegate {
+extension DetailUrlViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicatorView.stopAnimating()
         activityIndicatorView.removeFromSuperview()

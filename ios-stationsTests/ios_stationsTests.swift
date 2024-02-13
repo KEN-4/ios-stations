@@ -134,7 +134,7 @@ class ios_stationsTests: XCTestCase {
         button.tap()
         
         let secondVC = try XCTUnwrap(vc.presentedViewController, "遷移先のViewControllerが設定されていません")
-        XCTAssertTrue(secondVC is SecondViewController, "遷移先のViewControllerがSecondViewControllerとして設定されていません")
+        XCTAssertTrue(secondVC is DetailUrlViewController, "遷移先のViewControllerがSecondViewControllerとして設定されていません")
         
         let webView = try XCTUnwrap(secondVC.view as? WKWebView, "遷移先のviewにWKWebViewが設定されていません")
         XCTAssertNil(webView.url?.absoluteString, "SecondViewControllerのurlに適切な値が設定されていません")
@@ -156,7 +156,7 @@ class ios_stationsTests: XCTestCase {
         button.tap()
         
         let secondVC = try XCTUnwrap(vc.presentedViewController, "遷移先のViewControllerが設定されていません")
-        XCTAssertTrue(secondVC is SecondViewController, "遷移先のViewControllerがSecondViewControllerとして設定されていません")
+        XCTAssertTrue(secondVC is DetailUrlViewController, "遷移先のViewControllerがSecondViewControllerとして設定されていません")
 
         let webView = try XCTUnwrap(secondVC.view as? WKWebView, "遷移先のviewにWKWebViewが設定されていません")
         XCTAssertEqual(webView.url?.absoluteString, "https://techbowl.co.jp/", "SecondViewControllerのurlに適切な値が設定されていません")
@@ -305,7 +305,7 @@ class ios_stationsTests: XCTestCase {
         tableView.delegate?.tableView?(tableView, didSelectRowAt: indexPath)
         
         let secondVC = try XCTUnwrap(vc.presentedViewController, "遷移先のViewControllerが設定されていません")
-        XCTAssertTrue(secondVC is SecondViewController, "遷移先のViewControllerがSecondViewControllerとして設定されていません")
+        XCTAssertTrue(secondVC is DetailUrlViewController, "遷移先のViewControllerがSecondViewControllerとして設定されていません")
         
         let webView = try XCTUnwrap(secondVC.view as? WKWebView, "遷移先のviewにWKWebViewが設定されていません")
         XCTAssertEqual(webView.url?.absoluteString, "https://www.amazon.co.jp/dp/B08FZX8PYW/ref=cm_sw_em_r_mt_dp_7NDC2QCY40JYYR6RE3KJ", "SecondViewControllerのurlに適切な値が設定されていません")

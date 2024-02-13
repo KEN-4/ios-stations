@@ -16,7 +16,7 @@
 		BE24514D266FBEE10038AD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE24514B266FBEE10038AD81 /* LaunchScreen.storyboard */; };
 		BE245158266FBEE10038AD81 /* ios_stationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE245157266FBEE10038AD81 /* ios_stationsTests.swift */; };
 		BE245163266FBEE10038AD81 /* ios_stationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE245162266FBEE10038AD81 /* ios_stationsUITests.swift */; };
-		BE665EDE2678EA44006F4F2C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE665EDD2678EA44006F4F2C /* SecondViewController.swift */; };
+		BE665EDE2678EA44006F4F2C /* DetailUrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE665EDD2678EA44006F4F2C /* DetailUrlViewController.swift */; };
 		BE7131372685ED0F00E3EAB8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7131362685ED0F00E3EAB8 /* Book.swift */; };
 		BE7131392685ED7600E3EAB8 /* BookAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7131382685ED7600E3EAB8 /* BookAPIClient.swift */; };
 		BE7131462688C07700E3EAB8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7131452688C07600E3EAB8 /* WebKit.framework */; };
@@ -69,7 +69,7 @@
 		BE24515E266FBEE10038AD81 /* ios-stationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-stationsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE245162266FBEE10038AD81 /* ios_stationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_stationsUITests.swift; sourceTree = "<group>"; };
 		BE245164266FBEE10038AD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE665EDD2678EA44006F4F2C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		BE665EDD2678EA44006F4F2C /* DetailUrlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUrlViewController.swift; sourceTree = "<group>"; };
 		BE665EDF26817723006F4F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		BE7131362685ED0F00E3EAB8 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		BE7131382685ED7600E3EAB8 /* BookAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPIClient.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				BE7131382685ED7600E3EAB8 /* BookAPIClient.swift */,
 				BE713149268B4CA400E3EAB8 /* BookCell.swift */,
 				BE713147268B3CF000E3EAB8 /* UIColor+Theme.swift */,
-				BE665EDD2678EA44006F4F2C /* SecondViewController.swift */,
+				BE665EDD2678EA44006F4F2C /* DetailUrlViewController.swift */,
 				BE245146266FBEE00038AD81 /* Main.storyboard */,
 				BE245149266FBEE10038AD81 /* Assets.xcassets */,
 				BE24514B266FBEE10038AD81 /* LaunchScreen.storyboard */,
@@ -340,7 +340,7 @@
 				E7C109082B7630B300063412 /* ReviewEditViewController.swift in Sources */,
 				BE71314A268B4CA400E3EAB8 /* BookCell.swift in Sources */,
 				C07AFC6C2B5F488700C7567D /* InitialViewController.swift in Sources */,
-				BE665EDE2678EA44006F4F2C /* SecondViewController.swift in Sources */,
+				BE665EDE2678EA44006F4F2C /* DetailUrlViewController.swift in Sources */,
 				C07F9F642B5551CB00E068B4 /* SignupViewController.swift in Sources */,
 				BE713148268B3CF000E3EAB8 /* UIColor+Theme.swift in Sources */,
 				E7C9205B2B78C77400C3DCDD /* ReviewDetailViewController.swift in Sources */,
